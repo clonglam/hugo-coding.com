@@ -20,7 +20,7 @@ function MainNav({ navLinks }: Props) {
       <nav className="pt-[180px] container">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="grid grid-cols-1 sm:grid-cols-2 mt-px font-display text-5xl font-medium tracking-tight ">
-            {navLinks.map(({ label, href }) => (
+            {navLinks.map(({ label, href, external }) => (
               <Link
                 className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
                 key={label}

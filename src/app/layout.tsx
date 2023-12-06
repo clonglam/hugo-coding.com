@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs"
 import { NavbarProvider } from "./_components/NavbarContext"
 import Footer from "./_components/Footer"
 import Header from "./_components/Header"
+import Gtag from "@/lib/gtag"
 
 export const metadata: Metadata = {
   title: "Hugo Coding",
@@ -18,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Gtag />
       <body className="bg-black">
         <NavbarProvider>
           <ClerkProvider>

@@ -8,7 +8,7 @@ type Props = {}
 
 function AboutSection({}: Props) {
   return (
-    <section className="flex flex-wrap pt-8 pb-12 items-center justify-center container">
+    <section className="flex flex-wrap pt-8 pb-12 items-center justify-center">
       <div className=" lg:order-1 order-3 grow w-full lg:w-1/2">
         <p className="text-lg font-semibold mb-2" aria-label="section-header">
           Hugo Lam
@@ -16,9 +16,10 @@ function AboutSection({}: Props) {
         <h1 className="mb-6 text-4xl" data-aos="fade-up">
           I’m Front-end Developer based in Vancourver.
         </h1>
-        <p className="">
-          I build accessible, inclusive products and digital experiences for the
-          web.
+        <p className="max-w-xl">
+          Proficient Software Engineer with a passion for developing innovative
+          front-end solutions, excelling in integrating cutting-edge
+          technologies for enhanced user experiences.
         </p>
       </div>
 
