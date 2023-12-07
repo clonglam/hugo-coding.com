@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import MoreProjects from "../_components/MoreProjects"
 import { SelectProject } from "@/db/schema"
-import { getProjectBySlugAction } from "@/app/dashboard/projects/proejctsAction"
+import { getProjectBySlugAction } from "@/app/admin/projects/proejctsAction"
 import { notFound } from "next/navigation"
-import { getMedia } from "@/app/dashboard/medias/mediaAction"
+import { getMedia } from "@/app/admin/medias/mediaAction"
 type Props = { params: { slug: string } }
 
 async function ProjectDetailPage({ params: { slug } }: Props) {
