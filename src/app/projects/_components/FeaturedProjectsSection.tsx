@@ -21,6 +21,7 @@ async function FeaturedProjectsSection() {
         with: { category: true },
       },
     },
+    limit: 4,
   })
   return (
     <div className="container min-h-[480px] pt-[120px] pb-[160px]">
