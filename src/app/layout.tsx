@@ -25,6 +25,7 @@ export default function RootLayout({
           <NavbarProvider>
             <Header />
             <div className="bg-white pt-[120px] ease-in">{children}</div>
+            <Footer />
           </NavbarProvider>
         </ClerkProvider>
       </body>
