@@ -4,6 +4,9 @@ import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 import React from "react"
 import ProjectForm from "../_components/ProjectForm"
+import SectionHeader from "@/components/SectionHeader"
+import { Link } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
 
 type Props = {
   params: {
@@ -24,7 +27,18 @@ async function EditProjectPage({ params: { projectId } }: Props) {
 
   return (
     <div>
-      <h2>Edit Project</h2>
+      <SectionHeader
+        header="Edit Project"
+        description="You can add/edit the project from the dashboard"
+      >
+        <Link
+          href="/admin/projects"
+          className={buttonVariants({ variant: "dark" })}
+        >
+          Back
+        </Link>
+      </SectionHeader>
+
       <ProjectForm project={project} categories={categories} />
     </div>
   )

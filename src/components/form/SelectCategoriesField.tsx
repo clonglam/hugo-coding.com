@@ -1,8 +1,8 @@
 "use client"
-// Import your necessary hooks and components
+
 import React, { FC } from "react"
 import { useForm, Controller, useFormContext } from "react-hook-form"
-import { Checkbox } from "./ui/checkbox"
+import { Checkbox } from "../ui/checkbox"
 import { SelectCategory } from "@/db/schema"
 
 export const SelectCategoriesField: FC<{

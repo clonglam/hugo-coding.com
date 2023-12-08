@@ -20,7 +20,7 @@ import {
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 import { SelectProject } from "@/db/schema"
 
-const EditorComp = dynamic(() => import("@/components/EditorComponent"), {
+const EditorComp = dynamic(() => import("@/components/form/EditorComponent"), {
   ssr: false,
 })
 

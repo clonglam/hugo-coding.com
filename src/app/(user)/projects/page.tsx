@@ -2,7 +2,7 @@ import { db } from "@/db"
 import ProjectGrid from "./_components/ProjectGrid"
 import SectionHeader from "@/components/SectionHeader"
 import CategorySelctor from "./_components/CategorySelctor"
-import { getProductsByCategoryAction } from "@/app/admin/projects/proejctsAction"
+import { getProductsByCategoryAction } from "@/app/(admin)/admin/projects/proejctsAction"
 import { SelectProject } from "@/db/schema"
 
 type Props = {

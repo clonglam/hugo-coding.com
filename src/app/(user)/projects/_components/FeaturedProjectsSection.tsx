@@ -1,4 +1,4 @@
-import { SelectProject, SelectProjectWithCategory } from "@/db/schema"
+import { SelectProject, SelectProjectWithCategory, projects } from "@/db/schema"
 import React, { Suspense } from "react"
 import ProjectCard from "./ProjectCard"
 import ProjectGrid from "./ProjectGrid"
@@ -7,7 +7,8 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import FeaturedCard from "./FeaturedCard"
-import { db } from "../../../db"
+import { db } from "../../../../db"
+import { eq } from "drizzle-orm"
 
 type Props = {
   featuredProjects: SelectProjectWithCategory[]
@@ -15,13 +16,14 @@ type Props = {
 
 async function FeaturedProjectsSection() {
   const featuredProjects = await db.query.projects.findMany({
+    where: eq(projects.featured, true),
     with: {
       projectsToCategories: {
         columns: { projectId: false, categoryId: false },
         with: { category: true },
       },
     },
-    limit: 4,
+    limit: 2,
   })
   return (
     <div className="container min-h-[480px] pt-[120px] pb-[160px]">

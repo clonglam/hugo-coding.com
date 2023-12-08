@@ -27,7 +27,7 @@ import { ChangeAdmonitionType } from "@mdxeditor/editor/plugins/toolbar/componen
 import { toolbarPlugin } from "@mdxeditor/editor/plugins/toolbar"
 import { linkPlugin } from "@mdxeditor/editor/plugins/link"
 import { SelectMedia } from "@/db/schema"
-import { Button } from "./ui/button"
+
 
 interface EditorProps extends MDXEditorProps {
   editorRef?: React.MutableRefObject<MDXEditorMethods | null>

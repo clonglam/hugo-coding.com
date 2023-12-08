@@ -5,8 +5,7 @@ import { Suspense } from "react"
 import { MDXRemote } from "next-mdx-remote/rsc"
 
 import { cn } from "@/lib/utils"
-// import { Callout } from "@/components/callout"
-import { MdxCard } from "@/components/mdx-card"
+import { MdxCard } from "./mdx-card"
 
 const components: MDXComponents = {
   h1: ({ className, ...props }) => (

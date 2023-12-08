@@ -25,7 +25,9 @@ async function NewProjectPage({}: Props) {
           Back
         </Link>
       </SectionHeader>
-      <ProjectForm categories={categories} />
+      <div className="">
+        <ProjectForm categories={categories} />
+      </div>
     </div>
   )
 }

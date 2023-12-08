@@ -1,11 +1,10 @@
-import FeaturedProjectsSection from "./projects/_components/FeaturedProjectsSection"
+import FeaturedProjectsSection from "./(user)/projects/_components/FeaturedProjectsSection"
 import SectionHeader from "@/components/SectionHeader"
 import HeroSection from "./_components/HeroSection"
 import ClientsList from "./_components/ClientsList"
 import OurServices from "./_components/OurServices"
 import ContactSection from "./_components/ContactSection"
 import { Suspense } from "react"
-import AboutSection from "./about/_components/AboutSection"
 
 export default async function HomePage() {
   const events = [

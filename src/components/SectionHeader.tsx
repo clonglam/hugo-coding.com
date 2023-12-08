@@ -8,7 +8,7 @@ type Props = {
 
 function SectionHeader({ children, header, description }: Props) {
   return (
-    <div className="flex justify-between items-center mb-3">
+    <div className="flex justify-between items-center mb-5 pb-3 border-b">
       <div>
         <h1 className="font-semibold w-[480px] mb-2 leading-tight">{header}</h1>
         <p className="max-w-xl text-zinc-500 text-md w-[580px]  leading-tight">

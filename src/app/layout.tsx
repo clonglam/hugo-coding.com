@@ -21,13 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <Gtag />
       <body className="bg-black">
-        <NavbarProvider>
-          <ClerkProvider>
+        <ClerkProvider>
+          <NavbarProvider>
             <Header />
             <div className="bg-white pt-[120px] ease-in">{children}</div>
-            <Footer />
-          </ClerkProvider>
-        </NavbarProvider>
+          </NavbarProvider>
+        </ClerkProvider>
       </body>
     </html>
   )

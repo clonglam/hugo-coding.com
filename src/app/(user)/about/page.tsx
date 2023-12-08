@@ -1,11 +1,11 @@
 import React from "react"
 import AboutSection from "./_components/AboutSection"
-import ContactSection from "../_components/ContactSection"
-import ContactInfo from "../contact/_component/ContactInfo"
-import ContactForm from "../contact/_component/ContactForm"
+
 import Skills from "./_components/Skills"
 import Experience from "./_components/Experience"
 import Resume from "./_components/Resume"
+import ContactInfo from "../contact/_component/ContactInfo"
+import ContactForm from "../contact/_component/ContactForm"
 
 type Props = {}
 

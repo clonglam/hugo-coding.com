@@ -1,14 +1,15 @@
 import React from "react"
 import Image from "next/image"
-import { Mdx } from "@/components/mdx-components"
+
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import MoreProjects from "../_components/MoreProjects"
 import { SelectProject } from "@/db/schema"
-import { getProjectBySlugAction } from "@/app/admin/projects/proejctsAction"
+import { getProjectBySlugAction } from "@/app/(admin)/admin/projects/proejctsAction"
 import { notFound } from "next/navigation"
-import { getMedia } from "@/app/admin/medias/mediaAction"
+import { getMedia } from "@/app/(admin)/admin/medias/mediaAction"
+import { Mdx } from "@/components/form/mdx-components"
 type Props = { params: { slug: string } }
 
 async function ProjectDetailPage({ params: { slug } }: Props) {
@@ -88,34 +89,3 @@ async function ProjectDetailPage({ params: { slug } }: Props) {
 }
 
 export default ProjectDetailPage
-
-//  <Mdx
-//           source={`
-//             # Welcome
-
-//             This is a **live demo** of MDXEditor with all default features on.
-
-//             > The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible.
-//             > The idea is that a Markdown-formatted document should be publishable as-is, as plain text,
-//             > without looking like it’s been marked up with tags or formatting instructions.
-
-//             [— Daring Fireball](https://daringfireball.net/projects/markdown/).
-
-//             In here, you can find the following markdown elements:
-
-//             * Headings
-//             * Lists
-//               * Unordered
-//               * Ordered
-//               * And nested ;)
-//             * Links
-//             * Bold/Italic/Underline formatting
-//             * Tables
-//             * Code block editors
-//             * And much more.
-
-//             <TwoRowImage images={[
-//                 {url: "https://images.unsplash.com/photo-1698917401470-8561d7f0ed0d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8"},
-//                 {url: "https://images.unsplash.com/photo-1698917401470-8561d7f0ed0d?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8"},
-//             ]}/>
-//           `}

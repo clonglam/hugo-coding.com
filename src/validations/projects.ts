@@ -10,6 +10,7 @@ export const projectSchema = z.object({
   content: z.string().min(1, "Content is required.").max(65535),
   tags: z.array(z.string()),
   featuredImage: z.string(),
+  featured: z.boolean(),
   categories: z.array(z.string()),
 })
 
