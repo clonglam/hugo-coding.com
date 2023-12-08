@@ -11,14 +11,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdownMenu"
 
+import { SelectProjectWithCategory } from "@/db/schema"
 import Link from "next/link"
-import { SelectProject } from "@/db/schema"
 
-import { deleteProjectAction } from "../proejctsAction"
-import DeleteDialog from "@/components/ui/deleteDialog"
 import { Badge } from "@/components/ui/badge"
+import DeleteDialog from "@/components/ui/deleteDialog"
+import { deleteProjectAction } from "../proejctsAction"
 
-export const projectColumns: ColumnDef<SelectProject>[] = [
+export const projectColumns: ColumnDef<SelectProjectWithCategory>[] = [
   {
     accessorKey: "title",
     header: () => <div className="text-left capitalize">Title</div>,
@@ -45,12 +45,32 @@ export const projectColumns: ColumnDef<SelectProject>[] = [
     },
   },
   {
+    accessorKey: "category",
+    header: () => <div className="text-left">Category</div>,
+    cell: ({ row }) => {
+      const categories = row.original.projectsToCategories
+
+      return (
+        <div className="font-medium text-left flex gap-x-2">
+          {categories && categories.length > 0
+            ? categories.map(({ category }, index) => (
+                <Badge className="" key={index}>
+                  {category.slug}
+                </Badge>
+              ))
+            : "-"}
+        </div>
+        // <div className="font-medium text-center">{row.getValue("year")}</div>
+      )
+    },
+  },
+  {
     accessorKey: "tags",
     header: () => <div className="text-left">Tags</div>,
     cell: ({ row }) => {
       const tags = row.getValue("tags") as string[]
       return (
-        <div className="font-medium text-left">
+        <div className="font-medium text-left flex gap-x-2">
           {tags && tags.length > 0
             ? tags.map((tag, index) => (
                 <Badge className="" key={index}>

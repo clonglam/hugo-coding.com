@@ -9,13 +9,16 @@ import {
   boolean,
   integer,
 } from "drizzle-orm/pg-core"
+import { createId } from "@paralleldrive/cuid2"
+
 import { createInsertSchema, createSelectSchema } from "drizzle-zod"
 import { z } from "zod"
 
 export const projects = pgTable("projects", {
-  id: uuid("id")
-    .default(sql`gen_random_uuid()`)
-    .primaryKey(),
+  id: text("id")
+    .notNull()
+    .primaryKey()
+    .$defaultFn(() => createId()),
   title: varchar("title", { length: 255 }).notNull(),
   slug: varchar("slug", { length: 255 }).notNull().unique(),
   description: varchar("description", { length: 1024 }),
@@ -55,9 +58,10 @@ export type SelectProjectWithCategory = SelectProject & {
 }
 
 export const categories = pgTable("categories", {
-  id: uuid("id")
-    .default(sql`gen_random_uuid()`)
-    .primaryKey(),
+  id: text("id")
+    .notNull()
+    .primaryKey()
+    .$defaultFn(() => createId()),
   label: varchar("label", { length: 255 }).notNull(),
   slug: varchar("slug", { length: 255 }).notNull(),
 })
@@ -74,10 +78,10 @@ export const selectCategoriesSchema = createSelectSchema(categories)
 export const projectsToCategories = pgTable(
   "projectsToCategories",
   {
-    projectId: uuid("project_id")
+    projectId: text("project_id")
       .notNull()
       .references(() => projects.id, { onDelete: "cascade" }),
-    categoryId: uuid("category_id")
+    categoryId: text("category_id")
       .notNull()
       .references(() => categories.id, { onDelete: "cascade" }),
   },
@@ -101,9 +105,10 @@ export const projectsToCategoriesRelations = relations(
 )
 
 export const medias = pgTable("medias", {
-  id: uuid("id")
-    .default(sql`gen_random_uuid()`)
-    .primaryKey(),
+  id: text("id")
+    .notNull()
+    .primaryKey()
+    .$defaultFn(() => createId()),
   name: varchar("name", { length: 255 }).notNull(),
   key: varchar("key", { length: 255 }).notNull(),
 })

@@ -1,1 +1,0 @@
-ALTER TABLE "projectsToCategories" ADD CONSTRAINT "projectsToCategories_project_id_category_id" PRIMARY KEY("project_id","category_id");
