@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hugo-Coding.com
 
-## Getting Started
+Welcome to [hugo-coding.com](hugo-coding.com), a personal portfolio project showcasing the power of Next.js 14, integrated with a ``custom Content Management System (CMS)`, and utilizing Drizzle with TypeScript. This project is designed to demonstrate modern web development techniques and provide a template for others looking to create their own personal portfolio or similar web applications.
 
-First, run the development server:
+## 🌟 Using and Supporting Our Project 🌟
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You are welcome to use, modify, and distribute any part of this project. We believe in the collaborative spirit of open-source and the positive impact it brings.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Attribution and Respect
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+When utilizing our project, we kindly request the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Give Credit: Please credit Hugo-Coding.com in your work or documentation.
+- Follow the License: Adhere to the terms of the project's license.
+- Show Your Creations: Share what you build with us; we love seeing our work in action!
 
-## Learn More
+## Star Us on GitHub!
 
-To learn more about Next.js, take a look at the following resources:
+If you find our project useful or inspiring, consider giving it a ⭐️ on GitHub. This small act of support really helps us:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🚀 Boost Visibility: More stars increase our project's visibility, bringing more contributors and users.
+💡 Encourage Development: Your stars are a token of encouragement for us to keep improving and updating the project.
+🌍 Build Community: Stars help us build a stronger community around our project.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+- Next.js 14: Leveraging the latest version of Next.js for efficient, server-side rendered React applications.
+- Custom CMS: A tailored CMS for easy management of portfolio content.
+- Drizzle with TypeScript: Utilizing Drizzle for state management in Ethereum blockchain applications, enhanced with the robustness of TypeScript.
+  Getting Started
+  These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+What things you need to install the software and how to install them:
+
+- Node.js
+- npm or Yarn
+- Git
+
+## Installing
+
+A step by step series of examples that tell you how to get a development environment running:
+
+Clone the repo: git clone https://github.com/clonglam/hugo-coding.com
+Navigate to the project directory: cd hugo-coding.com
+Install dependencies: npm install or yarn install
+Start the development server: npm run dev or yarn dev
+Your local copy should now be running on localhost:3000.
+
+## Usage
+
+Briefly explain how to use the project - focusing on the main functionalities.
+
+## Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+## Acknowledgments
+
+Mention any inspirations, code snippets, etc.
+Any collaborators or contributors
