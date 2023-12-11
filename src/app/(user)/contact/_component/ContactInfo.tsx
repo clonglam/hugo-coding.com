@@ -9,7 +9,7 @@ function ContactInfo({}: Props) {
       <div>
         <h3 className="font-semibold">Contact info:</h3>
         <p>Email: hello@hugo-coding.com</p>
-        <p>Phone: +1 454-4545-4545</p>
+        <p>Phone: +1 604-818-2149</p>
       </div>
       <div className="flex gap-x-3 ">
         {landingConfig.socialMedias.map(({ Icon, url }, index) => (

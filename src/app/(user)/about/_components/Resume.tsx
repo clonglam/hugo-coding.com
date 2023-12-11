@@ -11,7 +11,7 @@ function Resume({}: Props) {
       href="/assets/resume.pdf"
       target="_top"
       download
-      className={cn(buttonVariants())}
+      className={cn(buttonVariants({ size: "lg" }), "my-5")}
     >
       Resume
     </Link>

@@ -6,34 +6,26 @@ import Experience from "./_components/Experience"
 import Resume from "./_components/Resume"
 import ContactInfo from "../contact/_component/ContactInfo"
 import ContactForm from "../contact/_component/ContactForm"
+import ContactBanner from "./_components/ContactBanner"
+import ContactSection from "../contact/_component/ContactSection"
 
 type Props = {}
 
 function AboutPage({}: Props) {
   return (
-    <div className="container">
-      <AboutSection />
-      <Experience />
-      <Skills />
-      <Resume />
+    <div>
+      <div className="container mb-8">
+        <AboutSection />
+        <Experience />
+        <Skills />
+        <Resume />
+      </div>
 
-      <section aria-label="Contact" className="container">
-        <div className="pt-[100px] pb-[180px]">
-          <h1 className="max-w-3xl">
-            For any enquiries, or to say hello, get in touch
-          </h1>
-        </div>
+      <ContactBanner
+        callForAction={`For any enquiries, or to say hello, get in touch`}
+      />
 
-        <div className="grid gap-x-8 gap-y-5 grid-cols-3">
-          <div className="col-span-3 md:col-span-1 ">
-            <ContactInfo />
-          </div>
-
-          <div className="col-span-3 md:col-span-2">
-            <ContactForm />
-          </div>
-        </div>
-      </section>
+      <ContactSection />
     </div>
   )
 }
