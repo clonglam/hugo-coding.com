@@ -1,4 +1,3 @@
-// TimelineEvent.js
 import React from "react"
 
 const TimelineEvent = ({ event }: any) => {

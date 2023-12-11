@@ -1,13 +1,13 @@
 import React from "react"
 import AboutSection from "./_components/AboutSection"
 
-import Skills from "./_components/Skills"
+import SkillsSection from "./_components/SkillsSection"
 import Experience from "./_components/Experience"
 import Resume from "./_components/Resume"
-import ContactInfo from "../contact/_component/ContactInfo"
-import ContactForm from "../contact/_component/ContactForm"
+
 import ContactBanner from "./_components/ContactBanner"
 import ContactSection from "../contact/_component/ContactSection"
+import { skills } from "@/config/skills"
 
 type Props = {}
 
@@ -17,7 +17,7 @@ function AboutPage({}: Props) {
       <div className="container mb-8">
         <AboutSection />
         <Experience />
-        <Skills />
+        <SkillsSection skills={skills} />
         <Resume />
       </div>
 
