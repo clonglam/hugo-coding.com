@@ -4,6 +4,7 @@ import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import landingConfig from "@/config/landing"
 import { cn } from "@/lib/utils"
+import SocialMediaIconsStack from "./SocialMediaIconsStack"
 
 type Props = {}
 
@@ -47,19 +48,10 @@ function HeroSection({}: Props) {
       </div>
 
       <div className="w-full lg:w-2/12 lg:col-span-2 text-center order-2 lg:order-4 mt-8 lg:mt-0 grow ">
-        <div className="flex flex-row lg:flex-col gap-x-8 gap-y-5 items-end justify-center">
-          {landingConfig.socialMedias.map(({ url, label, Icon }, index) => (
-            <a
-              key={label}
-              target="_blank"
-              rel="noreferrer"
-              href={url}
-              className="w-10 h-10 hover:bg-slate-300/30 rounded-full p-2 flex justify-center items-center transition-all duration-300"
-            >
-              <Icon className=" h-4 w-4 fill-black" />
-            </a>
-          ))}
-        </div>
+        <SocialMediaIconsStack
+          containerClassName="flex flex-row lg:flex-col gap-x-8 gap-y-5 items-end justify-center"
+          iconClassName="fill-black hover:fill-[#121212]"
+        />
       </div>
     </section>
   )

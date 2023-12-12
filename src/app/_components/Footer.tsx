@@ -1,10 +1,9 @@
 import landingConfig from "@/config/landing"
 import React from "react"
 import AllRightReserved from "./AllRightReserved"
+import SocialMediaIconsStack from "./SocialMediaIconsStack"
 
-type Props = {}
-
-function Footer({}: Props) {
+function Footer() {
   return (
     <footer className="border-t bg-[#121212] text-[#fff] pt-[50px] pb-[80px]">
       <div className="mx-auto container">
@@ -20,25 +19,22 @@ function Footer({}: Props) {
             <div className="leading-[200%] mb-3">
               <p>M: +1 604-818-2149</p>
               <p>
-                E:{" "}
+                {`E: `}
                 <a className="" href={`mailto:${landingConfig.email}`}>
                   {landingConfig.email}
                 </a>
               </p>
             </div>
 
-            <div className="flex gap-x-2">
+            <SocialMediaIconsStack containerClassName={"-ml-3"} />
+
+            {/* <div className="flex gap-x-2">
               {landingConfig.socialMedias.map(({ Icon, url }, index) => (
-                <a
-                  key={index}
-                  href={url}
-                  target="_blank"
-                  className=" hover:bg-slate-300/30 w-7 h-7 rounded-full flex justify-center items-center transition-all duration-300 p-1"
-                >
-                  <Icon className="fill-[#ddd] stroke-none hover:fill-[#fff]" />
+                <a key={index} href={url} target="_blank">
+                  <Icon className="fill-[#ddd] stroke-none hover:fill-[#fff] hover:bg-slate-300/30 w-7 h-7 rounded-full flex justify-center items-center transition-all duration-300 p-1" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="col-span-4">{/* Empty */}</div>
         </div>
