@@ -5,11 +5,6 @@ const landingConfig = {
   title: "I’m freelance product designer based in Vancourver.",
   socialMedias: [
     {
-      Icon: Icons.twitter,
-      url: "https://twitter.com/ClongLam",
-      label: "Twitter",
-    },
-    {
       Icon: Icons.gitHub as LucideIcon,
       url: "https://github.com/clonglam",
       label: "Github",
@@ -18,6 +13,11 @@ const landingConfig = {
       Icon: Icons.linkedin,
       url: "https://www.linkedin.com/in/hugo-lam/",
       label: "Linkedin",
+    },
+    {
+      Icon: Icons.twitter,
+      url: "https://twitter.com/ClongLam",
+      label: "Twitter",
     },
   ],
 
