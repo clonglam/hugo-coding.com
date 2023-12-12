@@ -8,7 +8,7 @@ function Footer({}: Props) {
   return (
     <footer className="border-t bg-[#121212] text-[#fff] pt-[50px] pb-[80px]">
       <div className="mx-auto container">
-        <p className="text-xl font-bold mb-5">Hugo Coding.</p>
+        <p className="text-2xl font-bold mb-2">Hugo Coding.</p>
         <div className="min-h-[180px] grid grid-cols-12">
           <div className="col-span-4 ">
             <p className="w-72 font-light leading-[150%]">
