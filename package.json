@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
+    "test:coverage": "jest --coverage",
     "db:generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
     "db:push": "drizzle-kit push:pg --config=drizzle.config.ts",
     "db:introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
