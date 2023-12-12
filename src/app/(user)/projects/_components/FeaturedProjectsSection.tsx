@@ -1,14 +1,11 @@
-import { SelectProject, SelectProjectWithCategory, projects } from "@/db/schema"
-import React, { Suspense } from "react"
-import ProjectCard from "./ProjectCard"
-import ProjectGrid from "./ProjectGrid"
-import SectionHeader from "@/components/SectionHeader"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
-import FeaturedCard from "./FeaturedCard"
-import { db } from "../../../../db"
+import { SelectProjectWithCategory, projects } from "@/db/schema"
+import { cn } from "@/lib/utils"
 import { eq } from "drizzle-orm"
+import Link from "next/link"
+import { Suspense } from "react"
+import { db } from "../../../../db"
+import FeaturedCard from "./FeaturedCard"
 
 type Props = {
   featuredProjects: SelectProjectWithCategory[]
@@ -29,10 +26,6 @@ async function FeaturedProjectsSection() {
     <div className="container min-h-[480px] pt-[120px] pb-[160px]">
       <div className="mb-8">
         <h3 className="font-semibold text-3xl">Featured Projects</h3>
-        {/* <p className="text-md font-normal">
-          Our strength is collaboration Our strength is collaboration Our
-          strength is collaboration Our strength is collaboration
-        </p> */}
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10">

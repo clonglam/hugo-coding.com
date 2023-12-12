@@ -58,7 +58,6 @@ async function FeaturedCard({ project }: Props) {
               <span>View Project</span>
               <span className="pl-3 group-hover:pl-5  transition-all duration-300">{`>`}</span>
             </p>
-            {/* <div className="border-t-2 border-black -translate-x-[100%] group-hover:translate-x-0 transition-all duration-400"></div> */}
           </Link>
         </div>
       </div>

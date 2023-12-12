@@ -11,9 +11,9 @@ function Footer() {
 
         <div className="min-h-[180px] grid grid-cols-12 gap-y-8">
           <div className="col-span-12 lg:col-span-4 ">
-            <p className="w-72 font-light leading-[150%] text-zinc-300">
-              Everyone can code, even a monkey. But good programe do human
-              readable code. - Write code for humans, Not for machines.
+            <p className="w-[20rem] font-light leading-[150%] text-zinc-300">
+              Any fool can write code that computers can understand. Good
+              programmers write code that humans can understand.
             </p>
           </div>
 
