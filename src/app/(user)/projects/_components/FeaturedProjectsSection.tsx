@@ -35,7 +35,7 @@ async function FeaturedProjectsSection() {
         </p> */}
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        <div className="grid grid-cols-2 gap-x-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10">
           {featuredProjects.map((project, index) => (
             <FeaturedCard project={project} key={index} />
           ))}

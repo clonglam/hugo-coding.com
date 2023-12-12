@@ -4,7 +4,7 @@ type Props = {}
 
 function AllRightReserved({}: Props) {
   return (
-    <div className="text-xs text-zinc-100 float-right">
+    <div className="text-sm text-zinc-100 float-right">
       © All rights reserved. Made by{" "}
       <a className="cursor-pointer underline hover:text-zinc-200">Hugo Lam</a>
     </div>

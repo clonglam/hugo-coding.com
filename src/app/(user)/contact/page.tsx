@@ -12,7 +12,7 @@ function ContactPage({}: Props) {
       <div className="container">
         <SectionHeader header="Contact me" description="" />
       </div>
-      <div className="py-[100px] mb-[80px] bg-zinc-100">
+      <div className="py-[100px] mb-[80px] bg-zinc-50">
         <div className="container">
           <h1 className="max-w-xl ">
             For any enquiries, or to say hello, get in touch

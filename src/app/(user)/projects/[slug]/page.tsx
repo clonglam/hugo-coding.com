@@ -1,15 +1,12 @@
-import React from "react"
 import Image from "next/image"
 
-import Link from "next/link"
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import MoreProjects from "../_components/MoreProjects"
-import { SelectProject } from "@/db/schema"
-import { getProjectBySlugAction } from "@/app/(admin)/admin/projects/proejctsAction"
-import { notFound } from "next/navigation"
 import { getMedia } from "@/app/(admin)/admin/medias/mediaAction"
+import { getProjectBySlugAction } from "@/app/(admin)/admin/projects/proejctsAction"
 import { Mdx } from "@/components/form/mdx-components"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import Link from "next/link"
+import { notFound } from "next/navigation"
 type Props = { params: { slug: string } }
 
 async function ProjectDetailPage({ params: { slug } }: Props) {
@@ -76,7 +73,7 @@ async function ProjectDetailPage({ params: { slug } }: Props) {
               })
             )}
           >
-            Contact Us
+            Contact me
           </Link>
         </div>
 
