@@ -24,7 +24,7 @@ const landingConfig = {
   navLinks: [
     { label: "Projects", href: "/projects" },
     { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/#contact" },
     { label: "Blog", href: "https://medium.com/@hugolam516", external: true },
   ],
   email: "hello@hugo-coding.com",

@@ -2,9 +2,7 @@ import { Icons } from "@/components/Icons"
 import Link from "next/link"
 import React from "react"
 
-type Props = {}
-
-function ContactSection({}: Props) {
+function ContactCFA() {
   return (
     <Link href={"/contact"}>
       <div className="border-t pt-[100px] pb-[180px] container mt-8 flex items-center justify-between group">
@@ -24,4 +22,4 @@ function ContactSection({}: Props) {
   )
 }
 
-export default ContactSection
+export default ContactCFA

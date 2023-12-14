@@ -19,9 +19,9 @@ function Header() {
           <div className="flex items-center gap-x-8 ">
             <Link
               className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition bg-neutral-50 text-black hover:bg-neutral-100/80"
-              href="/contact"
+              href="/#contact"
             >
-              <span className="relative">Contact us</span>
+              <span className="relative">Contact me</span>
             </Link>
 
             <NavToggler />

@@ -1,17 +1,16 @@
 import React from "react"
-import ContactForm from "./_component/ContactForm"
 
-import ContactInfo from "./_component/ContactInfo"
+import ContactInfo from "../../_components/ContactInfo"
 import SectionHeader from "@/components/SectionHeader"
+import ContactForm from "@/app/_components/ContactForm"
 
-type Props = {}
-
-function ContactPage({}: Props) {
+function ContactPage() {
   return (
     <div className="">
       <div className="container">
         <SectionHeader header="Contact me" description="" />
       </div>
+
       <div className="py-[100px] mb-[80px] bg-zinc-50">
         <div className="container">
           <h1 className="max-w-xl ">

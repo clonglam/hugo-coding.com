@@ -18,10 +18,10 @@ function HeroSection({}: Props) {
         <h1 className="mb-6 text-3xl">
           I’m Front-end Developer based in Vancourver.
         </h1>
-        <p className="max-w-[480px] leading-7 mb-8">
-          We are a development studio working at the intersection of design and
-          technology. It’s a really busy intersection though — a lot of our
-          staff have been involved in hit and runs.
+        <p className="max-w-[520px] leading-7 mb-8">
+          Proficient Software Engineer with a passion for developing innovative
+          front-end solutions, excelling in integrating cutting-edge
+          technologies for enhanced user experiences.
         </p>
 
         <Link
