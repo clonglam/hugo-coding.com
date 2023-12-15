@@ -4,11 +4,13 @@ import ContactSection from "./_components/ContactSection"
 import HeroSection from "./_components/HeroSection"
 import OurServices from "./_components/OurServices"
 import ContactForm from "./_components/ContactForm"
+import { Suspense } from "react"
 
 export default async function HomePage() {
   return (
     <div className="">
       <HeroSection />
+
       <FeaturedProjectsSection />
       <OurServices />
 
