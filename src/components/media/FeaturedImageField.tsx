@@ -15,7 +15,7 @@ export const FeaturedImageField: FC<{
 
   useEffect(() => {
     if (defaultValue) {
-      fetch(`/api/medias/${defaultValue}`)
+      fetch(`/medias/${defaultValue}`)
         .then((res) => res.json())
         .then((data) => {
           console.log("PreviewfileUrl", data)

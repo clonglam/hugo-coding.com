@@ -2,10 +2,11 @@ import { db } from "@/db"
 import { categories } from "@/db/schema"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
-import CateoryForm from "../_components/CategoryForm"
+
 import SectionHeader from "@/components/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
+import CateoryForm from "@/components/categories/CategoryForm"
 
 type Props = {
   params: {

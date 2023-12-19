@@ -3,10 +3,11 @@ import { projects } from "@/db/schema"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 import React from "react"
-import ProjectForm from "../_components/ProjectForm"
+
 import SectionHeader from "@/components/SectionHeader"
 import { Link } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
+import ProjectForm from "@/components/projects/ProjectForm"
 
 type Props = {
   params: {

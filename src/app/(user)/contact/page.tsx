@@ -1,8 +1,8 @@
 import React from "react"
 
-import ContactInfo from "../../_components/ContactInfo"
 import SectionHeader from "@/components/SectionHeader"
-import ContactForm from "@/app/_components/ContactForm"
+import ContactInfo from "@/components/contact/ContactInfo"
+import ContactForm from "@/components/contact/ContactForm"
 
 function ContactPage() {
   return (

@@ -16,7 +16,7 @@ import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import DeleteDialog from "@/components/ui/deleteDialog"
-import { deleteProjectAction } from "../proejctsAction"
+import { deleteProjectAction } from "../../actions/proejctsAction"
 
 export const projectColumns: ColumnDef<SelectProjectWithCategory>[] = [
   {

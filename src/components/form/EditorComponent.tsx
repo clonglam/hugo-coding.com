@@ -28,7 +28,6 @@ import { toolbarPlugin } from "@mdxeditor/editor/plugins/toolbar"
 import { linkPlugin } from "@mdxeditor/editor/plugins/link"
 import { SelectMedia } from "@/db/schema"
 
-
 interface EditorProps extends MDXEditorProps {
   editorRef?: React.MutableRefObject<MDXEditorMethods | null>
 }
@@ -45,7 +44,7 @@ const Editor: FC<EditorProps> = ({ markdown, editorRef, ...props }) => {
     formData.append("name", "Testing image")
     // send the file to your server and return
     // the URL of the uploaded image in the response
-    const response = await fetch("/api/medias", {
+    const response = await fetch("/medias", {
       method: "POST",
       body: formData,
     })

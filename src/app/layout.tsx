@@ -2,10 +2,11 @@ import "../styles/globals.css"
 
 import type { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
-import { NavbarProvider } from "./_components/NavbarContext"
-import Footer from "./_components/Footer"
-import Header from "./_components/Header"
+
 import Gtag from "@/lib/gtag"
+import { NavbarProvider } from "@/components/landing/NavbarContext"
+import Header from "@/components/landing/Header"
+import Footer from "@/components/landing/Footer"
 
 export const metadata: Metadata = {
   title: "Hugo Coding",

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react"
 
 import { SelectProjectWithCategory } from "@/db/schema"
 import { mockComponent } from "react-dom/test-utils"
-import FeaturedCard from "../../_components/FeaturedCard"
+import FeaturedCard from "../../FeaturedCard"
 
 const renderCompoent = async () => {
   const featuredProjects: SelectProjectWithCategory = {

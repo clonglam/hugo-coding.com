@@ -1,7 +1,7 @@
 import Image from "next/image"
 
-import { getMedia } from "@/app/(admin)/admin/medias/mediaAction"
-import { getProjectBySlugAction } from "@/app/(admin)/admin/projects/proejctsAction"
+import { getMedia } from "@/actions/mediaAction"
+import { getProjectBySlugAction } from "@/actions/proejctsAction"
 import { Mdx } from "@/components/form/mdx-components"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"

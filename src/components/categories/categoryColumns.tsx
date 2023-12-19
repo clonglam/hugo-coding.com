@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/dropdownMenu"
 
 import { SelectCategory } from "@/db/schema"
-import { deleteCategoryAction } from "../categoryActions"
+import { deleteCategoryAction } from "../../actions/categoryActions"
 
 export const categoryColumns: ColumnDef<SelectCategory>[] = [
   {

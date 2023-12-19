@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import { eq } from "drizzle-orm"
 import Link from "next/link"
 import { Suspense } from "react"
-import { db } from "../../../../db"
+import { db } from "@/db"
 import FeaturedCard from "./FeaturedCard"
 
 type Props = {

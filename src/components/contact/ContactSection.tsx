@@ -1,6 +1,6 @@
 import React from "react"
-import ContactInfo from "../../../_components/ContactInfo"
-import ContactForm from "@/app/_components/ContactForm"
+import ContactInfo from "./ContactInfo"
+import ContactForm from "./ContactForm"
 
 function ContactSection() {
   return (

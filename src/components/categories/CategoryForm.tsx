@@ -21,9 +21,13 @@ import {
 
 import { Icons } from "@/components/Icons"
 import Link from "next/link"
-import { addCategoryAction, editCategoryAction } from "../categoryActions"
+
 import { Input } from "@/components/ui/input"
 import { Button, buttonVariants } from "@/components/ui/button"
+import {
+  addCategoryAction,
+  editCategoryAction,
+} from "../../actions/categoryActions"
 
 type CategoryFormProps = {
   category?: SelectCategory
@@ -43,7 +47,7 @@ function CateoryForm({ category }: CategoryFormProps) {
     formState: { errors },
   } = form
 
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     console.log("form submited", data)
 
     startTransition(async () => {

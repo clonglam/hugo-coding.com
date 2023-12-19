@@ -1,5 +1,5 @@
 import { findByRole, render, screen } from "@testing-library/react"
-import AboutSection from "../_components/AboutSection"
+import AboutSection from "../AboutSection"
 
 test("should render About section", () => {
   expect(true).toBeTruthy()

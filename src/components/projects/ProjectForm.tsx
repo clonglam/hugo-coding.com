@@ -20,9 +20,10 @@ import EditorField from "@/components/form/EditorField"
 import { Icons } from "@/components/Icons"
 import SelectCategoriesField from "@/components/form/SelectCategoriesField"
 import TagsField from "@/components/ui/tagsField"
-import FeaturedImageField from "../../medias/_components/FeaturedImageField"
-import { addProjectAction, editProjectAction } from "../proejctsAction"
+
 import BooleanCheckboxField from "@/components/form/BooleanCheckboxField"
+import { addProjectAction, editProjectAction } from "@/actions/proejctsAction"
+import FeaturedImageField from "../media/FeaturedImageField"
 
 type ProjectFormProps = {
   project?: SelectProjectWithCategory

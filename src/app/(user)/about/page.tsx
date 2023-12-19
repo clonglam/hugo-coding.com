@@ -1,13 +1,12 @@
 import React from "react"
-import AboutSection from "./_components/AboutSection"
+import AboutSection from "@/components/about/AboutSection"
 
-import SkillsSection from "./_components/SkillsSection"
-import Experience from "./_components/Experience"
-import Resume from "./_components/Resume"
-
-import ContactBanner from "./_components/ContactBanner"
-import ContactSection from "../contact/_component/ContactSection"
+import ContactSection from "@/components/contact/ContactSection"
 import { skills } from "@/config/skills"
+import Experience from "@/components/about/Experience"
+import SkillsSection from "@/components/about/SkillsSection"
+import Resume from "@/components/about/Resume"
+import ContactBanner from "@/components/about/ContactBanner"
 
 type Props = {}
 

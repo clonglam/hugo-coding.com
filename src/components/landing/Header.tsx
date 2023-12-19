@@ -1,8 +1,9 @@
 import React from "react"
 import Link from "next/link"
 import landingConfig from "@/config/landing"
-import NavToggler from "@/app/_components/NavToggler"
+
 import MainNav from "./MainNav"
+import NavToggler from "./NavToggler"
 
 function Header() {
   return (

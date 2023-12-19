@@ -1,10 +1,8 @@
-import ContactInfo from "./_components/ContactInfo"
-import FeaturedProjectsSection from "./(user)/projects/_components/FeaturedProjectsSection"
-import ContactSection from "./_components/ContactSection"
-import HeroSection from "./_components/HeroSection"
-import OurServices from "./_components/OurServices"
-import ContactForm from "./_components/ContactForm"
-import { Suspense } from "react"
+import ContactForm from "@/components/contact/ContactForm"
+import ContactInfo from "@/components/contact/ContactInfo"
+import HeroSection from "@/components/landing/HeroSection"
+import OurServices from "@/components/landing/OurServices"
+import FeaturedProjectsSection from "@/components/projects/FeaturedProjectsSection"
 
 export default async function HomePage() {
   return (

@@ -1,6 +1,7 @@
 import { render } from "@testing-library/react"
-import ProjectGrid from "../../_components/ProjectGrid"
+
 import { SelectProject } from "@/db/schema"
+import ProjectGrid from "../../ProjectGrid"
 
 const renderComponent = () => {
   const projects: SelectProject[] = []

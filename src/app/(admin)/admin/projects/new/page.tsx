@@ -1,10 +1,11 @@
 import React from "react"
-import ProjectForm from "../_components/ProjectForm"
+
 import SectionHeader from "@/components/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import { db } from "@/db"
 import { notFound } from "next/navigation"
+import ProjectForm from "@/components/projects/ProjectForm"
 
 type Props = {}
 

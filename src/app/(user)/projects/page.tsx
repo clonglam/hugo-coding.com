@@ -1,9 +1,10 @@
 import { db } from "@/db"
-import ProjectGrid from "./_components/ProjectGrid"
+
 import SectionHeader from "@/components/SectionHeader"
-import CategorySelctor from "./_components/CategorySelctor"
-import { getProductsByCategoryAction } from "@/app/(admin)/admin/projects/proejctsAction"
+import CategorySelctor from "@/components/projects/CategorySelctor"
+import { getProductsByCategoryAction } from "@/actions/proejctsAction"
 import { SelectProject } from "@/db/schema"
+import ProjectGrid from "@/components/projects/ProjectGrid"
 
 type Props = {
   searchParams: {

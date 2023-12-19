@@ -1,10 +1,10 @@
 import React from "react"
-import { listCategoriesAction } from "./categoryActions"
+import { listCategoriesAction } from "../../../../actions/categoryActions"
 import SectionHeader from "@/components/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
-import { PaginationTable } from "../_components/PaginationTable"
-import { categoryColumns } from "./_components/categoryColumns"
+import { PaginationTable } from "../../../../components/PaginationTable"
+import { categoryColumns } from "../../../../components/categories/categoryColumns"
 
 async function CategoriesPage() {
   const categories = await listCategoriesAction()

@@ -1,5 +1,5 @@
 import SectionHeader from "@/components/SectionHeader"
-import CategoryForm from "../_components/CategoryForm"
+import CategoryForm from "@/components/categories/CategoryForm"
 
 type Props = {}
 
