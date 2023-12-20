@@ -48,8 +48,6 @@ function CateoryForm({ category }: CategoryFormProps) {
   } = form
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log("form submited", data)
-
     startTransition(async () => {
       try {
         category

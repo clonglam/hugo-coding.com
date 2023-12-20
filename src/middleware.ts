@@ -8,7 +8,6 @@ export default authMiddleware({
     "/",
     "/icon",
     "/signin(.*)",
-    "/signup(.*)",
     "/projects(.*)",
     "/sso-callback(.*)",
     "/api(.*)",

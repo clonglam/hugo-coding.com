@@ -53,8 +53,6 @@ const Editor: FC<EditorProps> = ({ markdown, editorRef, ...props }) => {
       preview: string
     }
     return json.preview
-    // console.log("json", json)
-    // return URL.createObjectURL(image)
   }
 
   return (

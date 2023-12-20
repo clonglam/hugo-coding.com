@@ -42,7 +42,6 @@ export async function editCategoryAction(id: string, input: InsertCategory) {
     .where(eq(categories.id, id))
     .returning()
 
-  console.log("editedCategory.", editedCategory)
   revalidateTag("categories") // Update cached posts
   revalidateTag(`categories/${editedCategory[0].id}`) // Update cached posts
   redirect(`/admin/categories`) // Navigate to new route

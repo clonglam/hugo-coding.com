@@ -15,8 +15,6 @@ export async function POST(request: NextRequest) {
   //   if (!session) return NextResponse.json({}, { status: 401 })
 
   const formData = await request.formData()
-  console.log("Data formData", formData)
-
   const data = Object.fromEntries(formData) as ImageUploaderData
   const validation = imageSchema.safeParse(data)
 

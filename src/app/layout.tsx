@@ -1,5 +1,6 @@
 import "../styles/globals.css"
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Gtag />
+      <SpeedInsights />
       <body className="bg-black">
         <ClerkProvider>
           <NavbarProvider>
