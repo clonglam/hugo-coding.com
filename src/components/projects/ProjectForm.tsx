@@ -13,7 +13,7 @@ import {
   FormLabel,
   UncontrolledFormMessage,
 } from "@/components/ui/form"
-import { SelectCategory, SelectProjectWithCategory } from "@/db/schema"
+import { SelectCategory, SelectProjectWithCategory } from "@/db/backupSchema"
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 
 import EditorField from "@/components/form/EditorField"

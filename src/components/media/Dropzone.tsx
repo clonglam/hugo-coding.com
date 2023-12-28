@@ -16,6 +16,7 @@ export const Dropzone: FC<DropzoneProps> = ({
   name,
   onDrop,
   previewUrl,
+
   ...rest
 }) => {
   const { getRootProps, getInputProps } = useDropzone({

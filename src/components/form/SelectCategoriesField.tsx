@@ -3,7 +3,7 @@
 import React, { FC } from "react"
 import { useForm, Controller, useFormContext } from "react-hook-form"
 import { Checkbox } from "../ui/checkbox"
-import { SelectCategory } from "@/db/schema"
+import { SelectCategory } from "@/db/backupSchema"
 
 export const SelectCategoriesField: FC<{
   name: string

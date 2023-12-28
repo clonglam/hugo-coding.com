@@ -1,5 +1,5 @@
 import { db } from "@/db"
-import { projects } from "@/db/schema"
+import { projects } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 import React from "react"

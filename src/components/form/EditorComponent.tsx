@@ -26,7 +26,7 @@ import { BoldItalicUnderlineToggles } from "@mdxeditor/editor/plugins/toolbar/co
 import { ChangeAdmonitionType } from "@mdxeditor/editor/plugins/toolbar/components/ChangeAdmonitionType"
 import { toolbarPlugin } from "@mdxeditor/editor/plugins/toolbar"
 import { linkPlugin } from "@mdxeditor/editor/plugins/link"
-import { SelectMedia } from "@/db/schema"
+import { SelectMedia } from "@/db/backupSchema"
 
 interface EditorProps extends MDXEditorProps {
   editorRef?: React.MutableRefObject<MDXEditorMethods | null>

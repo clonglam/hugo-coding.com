@@ -1,5 +1,9 @@
 "use server"
-import { InsertCategory, categories, insertCategoriesSchema } from "@/db/schema"
+import {
+  InsertCategory,
+  categories,
+  insertCategoriesSchema,
+} from "@/db/backupSchema"
 
 import { db } from "@/db"
 import { eq } from "drizzle-orm"

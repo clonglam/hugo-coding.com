@@ -2,7 +2,7 @@ import { ScrollArea } from "@/components/ui/scrollArea"
 import { SidebarNav } from "./SidebarNav"
 
 import { dashboardConfig } from "@/config/dashboard"
-import "@/styles/globals.css"
+import "@/app/globals.css"
 import { currentUser } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
 

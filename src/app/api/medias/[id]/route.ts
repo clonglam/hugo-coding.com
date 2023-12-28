@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 
 import { db } from "@/db"
-import { uploadImage } from "@/lib/s3Client"
-import sharp from "sharp"
 
-import { nanoid } from "nanoid"
-import { imageSchema } from "@/validations/medias"
-import { medias } from "@/db/schema"
+import { medias } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
 
 export async function GET(

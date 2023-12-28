@@ -18,7 +18,7 @@ import {
   SelectCategory,
   insertCategoriesSchema,
   selectCategoriesSchema,
-} from "@/db/schema"
+} from "@/db/backupSchema"
 
 import { Icons } from "@/components/Icons"
 import Link from "next/link"

@@ -1,5 +1,5 @@
 import { db } from "@/db"
-import { categories } from "@/db/schema"
+import { categories } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 

@@ -2,7 +2,7 @@ import "server-only"
 
 import { Icons } from "@/components/Icons"
 import { db } from "@/db"
-import { medias } from "@/db/schema"
+import { medias } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
 import Image from "next/image"
 import Link from "next/link"

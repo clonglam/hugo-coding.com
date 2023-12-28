@@ -18,7 +18,7 @@ import {
   UncontrolledFormMessage,
 } from "@/components/ui/form"
 import { ProjectFormData, projectSchema } from "@/validations/projects"
-import { SelectProject } from "@/db/schema"
+import { SelectProject } from "@/db/backupSchema"
 
 const EditorComp = dynamic(() => import("@/components/form/EditorComponent"), {
   ssr: false,

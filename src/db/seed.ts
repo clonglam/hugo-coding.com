@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"
 import { drizzle } from "drizzle-orm/postgres-js"
 import postgres from "postgres"
 
-import * as schema from "./schema"
+import * as schema from "./backupSchema"
 
 dotenv.config()
 if (!process.env.DATABASE_URL) {
@@ -175,7 +175,7 @@ const actorsGallery = {
   tags: ["Nextjs", "MySQL", "AWS S3"],
   content: `## **Media Uploads**
 
-A key feature of Actors Gallery is the ability for students to upload multimedia content, such as images, video reels, and audio clips, which are essential for showcasing their acting skills and previous work.
+A key feature of Actors Gallery is the ability for students to  multimedia content, such as images, video reels, and audio clips, which are essential for showcasing their acting skills and previous work.
 
 ![media upload](https://hugo-coding.s3.us-west-1.amazonaws.com/qfamoz7fwhbxT6Zk6-0Z2.webp "media upload")
 

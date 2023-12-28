@@ -8,7 +8,7 @@ import sharp from "sharp"
 
 import { nanoid } from "nanoid"
 import { imageSchema } from "@/validations/medias"
-import { medias } from "@/db/schema"
+import { medias } from "@/db/backupSchema"
 
 export async function POST(request: NextRequest) {
   //   const session = await getServerSession(authOptions)
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
   const newMedia = await db
     .insert(medias)
     .values({
-      name: data.name,
+      name: data.image.name,
       key: key,
     })
     .returning()

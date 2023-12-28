@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/button"
-import { SelectProjectWithCategory, projects } from "@/db/schema"
+import { SelectProjectWithCategory, projects } from "@/db/backupSchema"
 import { cn } from "@/lib/utils"
 import { eq } from "drizzle-orm"
 import Link from "next/link"

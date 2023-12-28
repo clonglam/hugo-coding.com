@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react"
 
-import { SelectProjectWithCategory } from "@/db/schema"
+import { SelectProjectWithCategory } from "@/db/backupSchema"
 import { mockComponent } from "react-dom/test-utils"
 import FeaturedCard from "../../FeaturedCard"
 

@@ -11,7 +11,7 @@ import {
   projects,
   projectsToCategories,
   selectProjectSchema,
-} from "@/db/schema"
+} from "@/db/backupSchema"
 import { revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
 

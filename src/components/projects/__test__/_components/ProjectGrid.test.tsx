@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react"
 
-import { SelectProject } from "@/db/schema"
+import { SelectProject } from "@/db/backupSchema"
 import ProjectGrid from "../../ProjectGrid"
 
 const renderComponent = () => {

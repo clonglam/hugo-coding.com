@@ -1,4 +1,4 @@
-import { SelectProject } from "@/db/schema"
+import { SelectProject } from "@/db/backupSchema"
 import React from "react"
 import ProjectCard from "./ProjectCard"
 

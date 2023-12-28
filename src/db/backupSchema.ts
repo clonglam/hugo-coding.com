@@ -111,6 +111,8 @@ export const medias = pgTable("medias", {
     .$defaultFn(() => createId()),
   name: varchar("name", { length: 255 }).notNull(),
   key: varchar("key", { length: 255 }).notNull(),
+  createdAt: timestamp("created_at", { mode: "string" }).defaultNow(),
+  updatedAt: timestamp("updated_at", { mode: "string" }).defaultNow(),
 })
 
 export type SelectMedia = InferSelectModel<typeof medias>

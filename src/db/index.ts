@@ -3,7 +3,7 @@ import { drizzle } from "drizzle-orm/postgres-js"
 import { migrate } from "drizzle-orm/postgres-js/migrator"
 import postgres from "postgres"
 import { env } from "@/env.mjs"
-import * as schema from "./schema"
+import * as schema from "./backupSchema"
 
 // const connectionString = env.DATABASE_URL
 // // for migrations

@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdownMenu"
 
-import { SelectProjectWithCategory } from "@/db/schema"
+import { SelectProjectWithCategory } from "@/db/backupSchema"
 import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"

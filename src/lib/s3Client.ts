@@ -26,7 +26,7 @@ const s3Client = new S3Client({
 //   return getSignedUrl(s3Client, command, { expiresIn: 3600 })
 // }
 
-async function imagetoURL(key: string, width = 500) {
+export async function imagetoURL(key: string, width = 500) {
   if (key.startsWith("http://") || key.startsWith("https://")) return key
 
   const command = new GetObjectCommand({
@@ -46,16 +46,13 @@ async function imagetoURL(key: string, width = 500) {
   // return `data:image/png;base64,${resizedBody.toString("base64")}`
 }
 
-export { imagetoURL, s3Client }
-
 export const uploadImage = async (params: PutObjectCommandInput) => {
   const putObject = new PutObjectCommand(params)
-
   const s3Response = await s3Client.send(putObject)
-  // console.log("s3Response", s3Response)
-
   return s3Response
 }
 
 export const bufferToFile = (buffer: Buffer) =>
   `data:image/webp;base64,${buffer.toString("base64")}`
+
+export default s3Client

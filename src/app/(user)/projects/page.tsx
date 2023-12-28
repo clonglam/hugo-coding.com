@@ -3,7 +3,7 @@ import { db } from "@/db"
 import SectionHeader from "@/components/SectionHeader"
 import CategorySelctor from "@/components/projects/CategorySelctor"
 import { getProductsByCategoryAction } from "@/actions/proejctsAction"
-import { SelectProject } from "@/db/schema"
+import { SelectProject } from "@/db/backupSchema"
 import ProjectGrid from "@/components/projects/ProjectGrid"
 
 type Props = {

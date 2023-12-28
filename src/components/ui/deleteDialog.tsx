@@ -34,7 +34,7 @@ function DeleteDialog({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="ghost">{triggerLabel || "Delete"}</Button>
+        <Button variant="destructive">{triggerLabel || "Delete"}</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
