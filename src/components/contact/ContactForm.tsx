@@ -68,7 +68,7 @@ function ContactForm({ category }: CategoryFormProps) {
               <Input
                 defaultValue={category?.label}
                 aria-invalid={!!form.formState.errors.label}
-                placeholder="Type Category label here."
+                placeholder="Category"
                 variant={"underline"}
                 className="h-12 placeholder:text-zinc-800"
                 {...register("label")}
@@ -95,7 +95,7 @@ function ContactForm({ category }: CategoryFormProps) {
               <Input
                 defaultValue={category?.label}
                 aria-invalid={!!form.formState.errors.label}
-                placeholder="Your Email."
+                placeholder="Your Phone."
                 variant={"underline"}
                 className="h-12 placeholder:text-zinc-800"
                 {...register("label")}
@@ -108,7 +108,7 @@ function ContactForm({ category }: CategoryFormProps) {
               <Input
                 defaultValue={category?.label}
                 aria-invalid={!!form.formState.errors.label}
-                placeholder="Your Email."
+                placeholder="Company"
                 variant={"underline"}
                 className="h-12 placeholder:text-zinc-800"
                 {...register("label")}
@@ -122,7 +122,7 @@ function ContactForm({ category }: CategoryFormProps) {
               <Input
                 defaultValue={category?.label}
                 aria-invalid={!!form.formState.errors.label}
-                placeholder="Your Email."
+                placeholder="Enquiries"
                 variant={"underline"}
                 className="h-12 placeholder:text-zinc-800"
                 {...register("label")}

@@ -21,6 +21,7 @@ async function FeaturedCard({ project }: Props) {
           </p>
           <Icons.add className="translate-x-10 group-hover:translate-x-0 transition-all duration-300" />
         </div>
+
         <Link href={`/projects/${project.slug}`}>
           <Image
             className="group-hover:scale-[1.05] group-hover:opacity-20 transition-all duration-500 object-cover w-full h-[320px] "

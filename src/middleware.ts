@@ -6,15 +6,19 @@ import { authMiddleware } from "@clerk/nextjs"
 export default authMiddleware({
   publicRoutes: [
     "/",
+    "/_vercel/speed-insights/vitals",
     "/icon",
     "/signin(.*)",
     "/projects(.*)",
     "/sso-callback(.*)",
     "/api(.*)",
     "/categories(.*)",
-    "/products(.*)",
     "/about",
     "/contact",
+  ],
+  ignoredRoutes: [
+    "/((?!api|trpc))(_next.*|.+.[w]+$)",
+    "/_vercel/speed-insights/vitals",
   ],
 })
 
