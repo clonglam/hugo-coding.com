@@ -26,7 +26,7 @@ function HeroSection({}: Props) {
 
         <Link
           href="/about"
-          aria-label="know-more-button"
+          aria-label="Know More"
           className={cn(buttonVariants({ variant: "dark", size: "lg" }))}
         >
           Know More

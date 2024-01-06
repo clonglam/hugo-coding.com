@@ -25,7 +25,7 @@ async function FeaturedProjectsSection() {
   return (
     <div className="container min-h-[480px] pt-[120px] pb-[160px]">
       <div className="mb-8">
-        <h3 className="font-semibold text-3xl">Featured Projects</h3>
+        <h2 className="font-semibold text-3xl">Featured Projects</h2>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-10">

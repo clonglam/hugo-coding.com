@@ -13,7 +13,7 @@ function Header() {
     >
       <div className="container navbar absolute left-0 right-0 top-2 z-40 pt-14">
         <div className="flex items-center justify-between">
-          <Link aria-label="Home" href="/">
+          <Link aria-label="Hugo Coding." href="/">
             <span className="text-lg font-semibold">Hugo Coding.</span>
           </Link>
 

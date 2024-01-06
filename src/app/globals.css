@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://use.typekit.net/srd2jdl.css");
 @layer base {
   :root {
     --background: 0 0% 100%;

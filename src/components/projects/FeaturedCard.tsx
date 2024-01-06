@@ -41,7 +41,7 @@ async function FeaturedCard({ project }: Props) {
       <div className="group-hover:pt-0 pt-3 transition-all duration-500">
         <h2>
           <span className="font-semibold text-zinc-800">{project.title}</span>
-          <span className="text-zinc-400 text-sm">
+          <span className="text-zinc-500 text-sm">
             {` / `}
             {project.projectsToCategories.length > 0
               ? project.projectsToCategories[0].category.label
