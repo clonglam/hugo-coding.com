@@ -38,7 +38,13 @@ async function ProjectDetailPage({ params: { slug } }: Props) {
                 return (
                   <div className="min-w-[50%]" key={label}>
                     <p className="font-[500]">{label}</p>
-                    <p>{data}</p>
+                    {label === "Preview" ? (
+                      <a href={data} className="underline" target="_blank">
+                        {data}
+                      </a>
+                    ) : (
+                      <p>{data}</p>
+                    )}
                   </div>
                 )
             })}

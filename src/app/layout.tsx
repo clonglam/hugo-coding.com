@@ -35,13 +35,11 @@ export default function RootLayout({
       <Gtag />
       <SpeedInsights />
       <body className="bg-black">
-        <ClerkProvider>
-          <NavbarProvider>
-            <Header />
-            <div className="bg-white pt-[120px] ease-in">{children}</div>
-            <Footer />
-          </NavbarProvider>
-        </ClerkProvider>
+        <NavbarProvider>
+          <Header />
+          <div className="bg-white pt-[120px] ease-in">{children}</div>
+          <Footer />
+        </NavbarProvider>
       </body>
     </html>
   )

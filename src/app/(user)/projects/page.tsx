@@ -5,6 +5,7 @@ import CategorySelctor from "@/components/projects/CategorySelctor"
 import { getProductsByCategoryAction } from "@/actions/proejctsAction"
 import { SelectProject } from "@/db/backupSchema"
 import ProjectGrid from "@/components/projects/ProjectGrid"
+import { Suspense } from "react"
 
 type Props = {
   searchParams: {
@@ -47,7 +48,9 @@ async function ProjectsPage({ searchParams }: Props) {
         categories={categoriesSelection}
         selectedCategory={typeof category === "string" ? category : null}
       />
-      <ProjectGrid projects={projectsinCategory} />
+      <Suspense>
+        <ProjectGrid projects={projectsinCategory} />
+      </Suspense>
     </div>
   )
 }

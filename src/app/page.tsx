@@ -3,13 +3,16 @@ import ContactInfo from "@/components/contact/ContactInfo"
 import HeroSection from "@/components/landing/HeroSection"
 import OurServices from "@/components/landing/OurServices"
 import FeaturedProjectsSection from "@/components/projects/FeaturedProjectsSection"
+import { Suspense } from "react"
 
 export default async function HomePage() {
   return (
     <div className="">
       <HeroSection />
 
-      <FeaturedProjectsSection />
+      <Suspense fallback={<>Loading</>}>
+        <FeaturedProjectsSection />
+      </Suspense>
       <OurServices />
 
       <div className=" border-t pt-8 min-h-[450px] container" id="contact">

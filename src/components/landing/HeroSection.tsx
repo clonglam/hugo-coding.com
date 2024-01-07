@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
@@ -36,15 +36,17 @@ function HeroSection({}: Props) {
       <div className="order-2 grow block"></div>
 
       <div className="relative w-full  flex justify-center lg:w-auto lg:basis-auto order-1 lg:order-3 lg:pl-[30px] lg:block">
-        <div className="relative w-[180px] h-[180px] block ">
-          <Image
-            className="object-cover aspect-square rounded-full"
-            width={180}
-            height={180}
-            src="/assets/hugo-image.webp"
-            alt=""
-          />
-        </div>
+        <Suspense fallback={"loading"}>
+          <div className="relative w-[180px] h-[180px] block ">
+            <Image
+              className="object-cover aspect-square rounded-full"
+              width={180}
+              height={180}
+              src="/assets/hugo-image.webp"
+              alt=""
+            />
+          </div>
+        </Suspense>
       </div>
 
       <div className="w-full lg:w-2/12 lg:col-span-2 text-center order-2 lg:order-4 mt-8 lg:mt-0 grow ">
