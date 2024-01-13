@@ -48,7 +48,6 @@ export async function deleteMedia(id: string) {
   const data = await s3Client.send(
     new DeleteObjectCommand({ Bucket: env.S3_BUCKET, Key: media.key })
   )
-  console.log("s3 Response", data)
 
   if (data) {
     await db.delete(medias).where(eq(medias.id, id))

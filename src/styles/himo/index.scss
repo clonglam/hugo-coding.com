@@ -1,0 +1,33 @@
+// variables & functions
+@import "functions";
+@import "variables";
+@import "theme";
+@import "typography";
+
+// base & layout
+@import "base";
+@import "breakpoints";
+@import "grid";
+
+// colors
+@import "colors";
+
+// components (button, card, navbar etc)
+@import "components/navbar";
+@import "components/about";
+@import "components/layout";
+// @import 'components/temphome';
+// @import 'components/card';
+// @import 'components/home';
+// @import 'components/blog';
+// @import 'components/button';
+// @import 'components/tile';
+// @import 'components/sidebar';
+// @import 'components/breadcrumb';
+// @import 'components/posts';
+// @import "components/skelton";
+// @import "components/form";
+// @import "components/auth";
+
+// utilities (margin, padding, opacity, etc)
+@import "utilities";

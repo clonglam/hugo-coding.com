@@ -4,9 +4,10 @@ import { Controller, useFormContext } from "react-hook-form"
 
 import { MDXEditorMethods } from "@mdxeditor/editor"
 import dynamic from "next/dynamic"
-const EditorComp = dynamic(() => import("@/components/form/EditorComponent"), {
-  ssr: false,
-})
+import { ForwardRefEditor } from "../mdx/ForwardRefEditor"
+// const EditorComp = dynamic(() => import("@/components/form/EditorComponent"), {
+//   ssr: false,
+// })
 
 export const EditorField: FC<{
   name: string
@@ -20,10 +21,10 @@ export const EditorField: FC<{
     <Controller
       render={({ field: { onChange, value, onBlur } }) => {
         return (
-          <EditorComp
+          <ForwardRefEditor
             className="border border-solid border-black h-full md:h-[480px] overflow-scroll"
             markdown={value} // Ensure we're using the value provided by React Hook Form
-            editorRef={editorRef}
+            ref={editorRef}
             onChange={(markdown) => {
               console.log("markdown", markdown)
               onChange(markdown) // Notify React Hook Form of the change

@@ -32,7 +32,7 @@ type ProjectFormProps = {
 
 function ProjectForm({ project, categories }: ProjectFormProps) {
   const [isPending, startTransition] = useTransition()
-  // console.log("project", project)
+  console.log("project", project)
 
   const form = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
@@ -127,7 +127,6 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 <Textarea
                   placeholder="Type project description here."
                   defaultValue={project?.description || undefined}
-                  className="min-h-[280px]"
                   {...form.register("description")}
                 />
               </FormControl>
@@ -146,15 +145,15 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
               <UncontrolledFormMessage message={errors.year?.message} />
             </FormItem>
 
-            {/* <FormItem>
+            <FormItem>
               <FormLabel className="text-sm">Tags</FormLabel>
               <FormControl>
                 <TagsField name={"tags"} defaultValue={project?.tags || []} />
               </FormControl>
               <UncontrolledFormMessage message={errors.title?.message} />
-            </FormItem> */}
+            </FormItem>
 
-            {/* <FormItem>
+            <FormItem>
               <FormLabel className="text-sm">Featured Image</FormLabel>
               <FormControl>
                 <FeaturedImageField
@@ -163,9 +162,9 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 />
               </FormControl>
               <UncontrolledFormMessage message={errors.title?.message} />
-            </FormItem> */}
+            </FormItem>
 
-            {/* <FormItem>
+            <FormItem>
               <FormLabel className="text-sm">Year*</FormLabel>
               <FormControl>
                 <Input
@@ -187,6 +186,11 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                   name="categories"
                   choices={categories}
                 />
+                {/* <Input
+                    defaultValue={project?.year}
+                    placeholder="Type project year here."
+                    {...register("year")}
+                  /> */}
               </FormControl>
               <UncontrolledFormMessage message={errors.year?.message} />
             </FormItem>
@@ -213,7 +217,7 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 />
               </FormControl>
               <UncontrolledFormMessage message={errors.demoWebsite?.message} />
-            </FormItem>  */}
+            </FormItem>
           </div>
         </div>
       </form>

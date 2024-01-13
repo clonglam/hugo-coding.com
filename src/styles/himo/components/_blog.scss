@@ -1,0 +1,81 @@
+@use 'sass:math';
+
+.blog {
+  padding:$base-padding ;
+  
+  .posts {
+    padding: $base-padding*2 $base-padding;
+    display: grid;
+
+    grid-template-columns: repeat(1, 1fr);
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    gap: $base-padding * 2 $base-padding;
+
+    .post-card {
+      display: block;
+      padding: $base-padding 0;
+      border: math.div($base-border-thickness, 8) solid #eee;
+      border-radius: math.div($base-border-radius, 4);
+      .divider {
+        border-bottom: 1px solid #eee;
+      }
+      .post-card-title {
+        padding: 0 $base-padding math.div($base-padding, 3) $base-padding;
+        font-size: $font-size-lg;
+      }
+      .post-card-content {
+        font-size: $font-size-md;
+        padding: $base-padding;
+      }
+    }
+  }
+}
+
+.section-button{
+background-color: transparent;
+}
+.section-button{
+background-color: transparent;
+}
+
+
+.search-bar-container {
+  position: relative;
+  padding: 0 $base-padding;
+
+}
+.no-post{
+font-size: 18px;
+}
+
+.search-bar-input {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: $base-padding;
+  
+  .search-input {
+    border-radius: 2px;
+    padding: $base-padding $base-padding;
+    background-color: transparent;
+    border: 1px solid;
+    width: 100%;
+  }
+
+  .search-button {
+    position: absolute;
+    width:48px;
+    right:48px;
+    text-align: right;
+    background-color: transparent;
+    border-radius: 100%;
+  }
+}

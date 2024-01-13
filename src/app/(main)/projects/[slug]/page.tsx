@@ -15,13 +15,24 @@ async function ProjectDetailPage({ params: { slug } }: Props) {
 
   const image = await getMedia(project.featuredImage)
 
-  const { title, description, client, year, content, demoWebsite } = project
+  const { title, description, client, year, content, demoWebsite, tags } =
+    project
+
   return (
     <div className="">
       <div className="lg:pt-[160px] lg:pb-[100px] container">
-        <h1 className="font-[500] text-[40px] tracking-tighter leading-loose mb-2">
-          {title}
-        </h1>
+        <div className="mb-3">
+          <h1 className="font-[500] text-[40px] tracking-tighter">{title}</h1>
+
+          <div className="text-zinc-400">
+            {tags?.map((tag, index) => (
+              <span className="" key={tag}>
+                {tag}
+                {index < tags.length - 1 && <span>{` / `}</span>}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <div className="lg:flex block justify-between mb-9">
           <p className=" w-full lg:w-7/12 mb-5 lg:mb-0 tracking-wide leading-6 text-justify">
@@ -31,7 +42,6 @@ async function ProjectDetailPage({ params: { slug } }: Props) {
             {[
               { label: "Client", data: client },
               { label: "Project Year", data: year },
-              // { label: "Project Category", data: category.name },
               { label: "Preview", data: demoWebsite },
             ].map(({ label, data }) => {
               if (data)

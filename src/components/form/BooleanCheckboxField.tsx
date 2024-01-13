@@ -1,6 +1,6 @@
 "use client"
 
-import { FC } from "react"
+import { FC, useRef } from "react"
 import { Controller, useFormContext } from "react-hook-form"
 import { Checkbox } from "../ui/checkbox"
 
@@ -19,7 +19,8 @@ export const BooleanCheckboxField: FC<{
       render={({ field: { value, onChange } }) => (
         <label key={name} className="flex items-center gap-x-2">
           <Checkbox
-            {...rest}
+            // {...rest}
+            defaultChecked={defaultValue}
             checked={value}
             onCheckedChange={(checked) => {
               onChange(checked) // Pass the new value array to the react-hook-form onChange method

@@ -1,0 +1,26 @@
+.tempHome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+        font-size: 48px;
+        text-align: left;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+    }
+        .description-container {
+            p{
+                line-height: 1.75rem;
+                margin-top: 1rem;
+                font-size: 1rem;
+                font-weight: normal;
+            }
+        }
+    
+
+    .project-done {
+        width: 100%;
+        height: 572px;
+    }
+}

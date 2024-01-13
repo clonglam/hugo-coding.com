@@ -52,6 +52,7 @@
     "next-auth": "^4.24.4",
     "next-mdx-remote": "^4.4.1",
     "postgres": "^3.4.3",
+    "quill": "^1.3.7",
     "react": "^18",
     "react-cropper": "^2.3.3",
     "react-dom": "^18",

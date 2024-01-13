@@ -1,32 +1,26 @@
 "use client"
-import { FC } from "react"
-import "@mdxeditor/editor/style.css"
+import { SelectMedia } from "@/db/backupSchema"
 import {
-  AdmonitionDirectiveDescriptor,
-  GenericJsxEditor,
+  DiffSourceToggleWrapper,
   InsertImage,
-  JsxComponentDescriptor,
   MDXEditor,
   MDXEditorMethods,
   MDXEditorProps,
-  NestedLexicalEditor,
-  directivesPlugin,
+  diffSourcePlugin,
   headingsPlugin,
   imagePlugin,
-  jsxPlugin,
-  jsxPluginHooks,
   linkDialogPlugin,
   listsPlugin,
   markdownShortcutPlugin,
   quotePlugin,
 } from "@mdxeditor/editor"
-import { UndoRedo } from "@mdxeditor/editor/plugins/toolbar/components/UndoRedo"
+import { linkPlugin } from "@mdxeditor/editor/plugins/link"
+import { toolbarPlugin } from "@mdxeditor/editor/plugins/toolbar"
 import { BlockTypeSelect } from "@mdxeditor/editor/plugins/toolbar/components/BlockTypeSelect"
 import { BoldItalicUnderlineToggles } from "@mdxeditor/editor/plugins/toolbar/components/BoldItalicUnderlineToggles"
-import { ChangeAdmonitionType } from "@mdxeditor/editor/plugins/toolbar/components/ChangeAdmonitionType"
-import { toolbarPlugin } from "@mdxeditor/editor/plugins/toolbar"
-import { linkPlugin } from "@mdxeditor/editor/plugins/link"
-import { SelectMedia } from "@/db/backupSchema"
+import { UndoRedo } from "@mdxeditor/editor/plugins/toolbar/components/UndoRedo"
+import "@mdxeditor/editor/style.css"
+import { FC } from "react"
 
 interface EditorProps extends MDXEditorProps {
   editorRef?: React.MutableRefObject<MDXEditorMethods | null>
@@ -57,15 +51,17 @@ const Editor: FC<EditorProps> = ({ markdown, editorRef, ...props }) => {
 
   return (
     <MDXEditor
-      ref={editorRef}
       markdown={markdown}
       plugins={[
         headingsPlugin(),
         listsPlugin(),
         linkPlugin(),
         quotePlugin(),
+        diffSourcePlugin({
+          diffMarkdown: "An older version",
+          viewMode: "rich-text",
+        }),
         markdownShortcutPlugin(),
-        // jsxPlugin({ jsxComponentDescriptors }),
         linkDialogPlugin({
           linkAutocompleteSuggestions: [
             "https://virtuoso.dev",
@@ -80,6 +76,9 @@ const Editor: FC<EditorProps> = ({ markdown, editorRef, ...props }) => {
               <UndoRedo />
               <BlockTypeSelect />
               <InsertImage />
+              <DiffSourceToggleWrapper>
+                <UndoRedo />
+              </DiffSourceToggleWrapper>
             </>
           ),
         }),

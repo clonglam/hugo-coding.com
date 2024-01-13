@@ -208,9 +208,6 @@ const main = async () => {
   insertedProjects.forEach((project) => {
     console.log(`project ${project.title} is added to the DB.`)
   })
-
-  // const res = await db.query.writingQuestions.findMany()
-  // console.log("res", res)
 }
 
 main()

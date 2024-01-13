@@ -1,9 +1,9 @@
 "use client"
 
-import React, { FC } from "react"
-import { useForm, Controller, useFormContext } from "react-hook-form"
-import { Checkbox } from "../ui/checkbox"
 import { SelectCategory } from "@/db/backupSchema"
+import { FC } from "react"
+import { Controller, useFormContext } from "react-hook-form"
+import { Checkbox } from "../ui/checkbox"
 
 export const SelectCategoriesField: FC<{
   name: string
@@ -11,7 +11,7 @@ export const SelectCategoriesField: FC<{
   choices?: SelectCategory[]
 }> = ({ name, defaultValue, choices, ...rest }) => {
   const { control } = useFormContext()
-  console.log("defaultValue", defaultValue)
+
   return (
     <Controller
       control={control}
