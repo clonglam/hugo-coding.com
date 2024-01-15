@@ -1,6 +1,6 @@
 import landingConfig from "@/config/landing"
 import React from "react"
-import SocialMediaIconsStack from "../landing/SocialMediaIconsStack"
+import SocialMediaIconsStack from "../main/SocialMediaIconsStack"
 
 type Props = {}
 

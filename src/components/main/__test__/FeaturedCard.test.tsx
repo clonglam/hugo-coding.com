@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react"
 
 import { mockComponent } from "react-dom/test-utils"
-import FeaturedCard from "../../FeaturedCard"
+import FeaturedCard from "../FeaturedCard"
 import { SelectProjectWithCategory } from "@/db/schema/projects"
 
 const renderCompoent = async () => {
@@ -19,6 +19,7 @@ const renderCompoent = async () => {
     featured: false,
     createdAt: "2023-11-14T04:40:58.516Z",
     order: 0,
+    published: true,
     projectsToCategories: [{ category: { label: "1", id: "1", slug: "1" } }],
   }
   render(<FeaturedCard project={featuredProjects} />)

@@ -1,10 +1,11 @@
 "use client"
-import { SelectMedia } from "@/db/backupSchema"
+
 import { FC, useCallback, useEffect, useState } from "react"
 import { FileWithPath, useDropzone } from "react-dropzone"
 import Modal from "../Modal"
 import { Icons } from "../Icons"
 import { useRouter } from "next/navigation"
+import { SelectMedia } from "@/db/schema/medias"
 
 export const UploadMediasModal: FC<{
   name: string

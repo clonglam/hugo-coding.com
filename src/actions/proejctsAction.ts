@@ -104,17 +104,15 @@ export async function getProductsByCategoryAction({
   categorySlug: string | null
   year?: number
 }) {
-  // TODO: Need to updated the problem
-  // if (categorySlug) {
-  //   const projectsInCategory: SelectProjectWithCategory[] =
-  //     await db.query.categories.findFirst({
-  //       where: eq(categories.slug, categorySlug),
-  //       with: { projectsToCategories: { with: { project: true } } },
-  //     })
+  if (categorySlug) {
+    const projectsInCategory = await db.query.categories.findFirst({
+      where: eq(categories.slug, categorySlug),
+      with: { projectsToCategories: { with: { project: true } } },
+    })
 
-  //   return projectsInCategory?.projectsToCategories.map((project) => ({
-  //     ...project.project,
-  //   }))
-  // }
+    return projectsInCategory?.projectsToCategories.map((project) => ({
+      ...project.project,
+    }))
+  }
   return db.query.projects.findMany()
 }

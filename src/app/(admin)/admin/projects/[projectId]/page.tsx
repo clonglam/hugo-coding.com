@@ -1,5 +1,4 @@
 import { db } from "@/db"
-import { projects } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 import React from "react"
@@ -8,6 +7,7 @@ import SectionHeader from "@/components/SectionHeader"
 import { Link } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import ProjectForm from "@/components/projects/ProjectForm"
+import { projects } from "@/db/schema/projects"
 
 type Props = {
   params: {

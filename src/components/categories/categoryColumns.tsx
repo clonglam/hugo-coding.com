@@ -12,8 +12,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdownMenu"
 
-import { SelectCategory } from "@/db/backupSchema"
 import { deleteCategoryAction } from "../../actions/categoryActions"
+import { SelectCategory } from "@/db/schema/categories"
 
 export const categoryColumns: ColumnDef<SelectCategory>[] = [
   {

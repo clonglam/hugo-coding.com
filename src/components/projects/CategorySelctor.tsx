@@ -1,5 +1,6 @@
 "use client"
-import { SelectCategory } from "@/db/backupSchema"
+
+import { SelectCategory } from "@/db/schema/categories"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import React from "react"

@@ -1,18 +1,15 @@
 import ContactForm from "@/components/contact/ContactForm"
 import ContactInfo from "@/components/contact/ContactInfo"
-import HeroSection from "@/components/landing/HeroSection"
-import OurServices from "@/components/landing/OurServices"
-import FeaturedProjectsSection from "@/components/projects/FeaturedProjectsSection"
-import { Suspense } from "react"
+
+import FeaturedProjectsSection from "@/components/main/FeaturedProjectsSection"
+import HeroSection from "@/components/main/HeroSection"
+import OurServices from "@/components/main/OurServices"
 
 export default async function HomePage() {
   return (
     <div className="">
       <HeroSection />
-
-      <Suspense fallback={<>Loading</>}>
-        <FeaturedProjectsSection />
-      </Suspense>
+      <FeaturedProjectsSection />
       <OurServices />
 
       <div className=" border-t pt-8 min-h-[450px] container" id="contact">

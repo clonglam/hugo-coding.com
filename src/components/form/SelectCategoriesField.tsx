@@ -1,9 +1,9 @@
 "use client"
 
-import { SelectCategory } from "@/db/backupSchema"
 import { FC } from "react"
 import { Controller, useFormContext } from "react-hook-form"
 import { Checkbox } from "../ui/checkbox"
+import { SelectCategory } from "@/db/schema/categories"
 
 export const SelectCategoriesField: FC<{
   name: string

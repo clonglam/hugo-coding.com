@@ -8,7 +8,7 @@ import sharp from "sharp"
 
 import { nanoid } from "nanoid"
 import { imageSchema } from "@/validations/medias"
-import { medias } from "@/db/backupSchema"
+import { medias } from "@/db/schema/medias"
 
 export async function POST(request: NextRequest) {
   //   const session = await getServerSession(authOptions)

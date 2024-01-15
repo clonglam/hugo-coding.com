@@ -27,8 +27,9 @@ import {
   InsertCodeBlock,
   InsertSandpack,
 } from "@mdxeditor/editor"
-import { SelectMedia } from "@/db/backupSchema"
+
 import "@mdxeditor/editor/style.css"
+import { SelectMedia } from "@/db/schema/medias"
 
 interface EditorProps extends MDXEditorProps {
   editorRef?: ForwardedRef<MDXEditorMethods> | null

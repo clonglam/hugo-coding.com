@@ -1,7 +1,8 @@
 import landingConfig from "@/config/landing"
 import React from "react"
+
 import AllRightReserved from "./AllRightReserved"
-import SocialMediaIconsStack from "./SocialMediaIconsStack"
+import SocialMediaIconsStack from "../main/SocialMediaIconsStack"
 
 function Footer() {
   return (

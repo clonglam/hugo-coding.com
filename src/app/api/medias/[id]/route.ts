@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server"
 
 import { db } from "@/db"
 
-import { medias } from "@/db/backupSchema"
 import { eq } from "drizzle-orm"
+import { medias } from "@/db/schema"
 
 export async function GET(
   request: NextRequest,

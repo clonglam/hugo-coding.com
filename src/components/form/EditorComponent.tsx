@@ -1,5 +1,6 @@
 "use client"
-import { SelectMedia } from "@/db/backupSchema"
+
+import { SelectMedia } from "@/db/schema/medias"
 import {
   DiffSourceToggleWrapper,
   InsertImage,

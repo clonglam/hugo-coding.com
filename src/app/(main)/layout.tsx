@@ -1,6 +1,6 @@
-import Footer from "@/components/landing/Footer"
-import Header from "@/components/landing/Header"
-import { NavbarProvider } from "@/components/landing/NavbarContext"
+import Footer from "@/components/global/Footer"
+import Header from "@/components/global/Header"
+import { NavbarProvider } from "@/components/global/NavbarContext"
 
 export default function RootLayout({
   children,

@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"
 import { drizzle } from "drizzle-orm/postgres-js"
 import postgres from "postgres"
 
-import * as schema from "./backupSchema"
+import * as schema from "./schema"
 
 dotenv.config()
 if (!process.env.DATABASE_URL) {

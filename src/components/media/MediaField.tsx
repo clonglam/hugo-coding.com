@@ -4,7 +4,7 @@ import { FileWithPath } from "react-dropzone"
 import { Controller, useFormContext } from "react-hook-form"
 import { Dropzone } from "./Dropzone"
 import { nanoid } from "nanoid"
-import { SelectMedia } from "@/db/backupSchema"
+import { SelectMedia } from "@/db/schema/medias"
 
 export const FeaturedImageField: FC<{
   name: string
