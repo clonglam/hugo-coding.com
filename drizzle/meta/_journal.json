@@ -8,6 +8,20 @@
       "when": 1702054808218,
       "tag": "0000_yellow_captain_universe",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1705293871759,
+      "tag": "0001_peaceful_kate_bishop",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1705293956370,
+      "tag": "0002_famous_shiver_man",
+      "breakpoints": true
     }
   ]
 }

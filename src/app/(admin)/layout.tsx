@@ -1,5 +1,5 @@
 import { ScrollArea } from "@/components/ui/scrollArea"
-import { SidebarNav } from "./SidebarNav"
+import { SidebarNav } from "./admin/SidebarNav"
 
 import { dashboardConfig } from "@/config/dashboard"
 import "@/app/globals.css"

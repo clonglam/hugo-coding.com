@@ -1,5 +1,5 @@
 import { db } from "@/db"
-import { categories } from "@/db/backupSchema"
+
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 
@@ -7,6 +7,7 @@ import SectionHeader from "@/components/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import CateoryForm from "@/components/categories/CategoryForm"
+import { categories } from "@/db/schema/categories"
 
 type Props = {
   params: {

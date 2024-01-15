@@ -22,16 +22,13 @@ export const EditorField: FC<{
       render={({ field: { onChange, value, onBlur } }) => {
         return (
           <ForwardRefEditor
-            className="border border-solid border-black h-full md:h-[480px] overflow-scroll"
+            {...rest} // Spread the rest of the props you might need
+            className="border border-solid border-black h-full hoverflow-scroll"
             markdown={value} // Ensure we're using the value provided by React Hook Form
             ref={editorRef}
-            onChange={(markdown) => {
-              console.log("markdown", markdown)
-              onChange(markdown) // Notify React Hook Form of the change
-            }}
+            onChange={(markdown) => onChange(markdown)}
             placeholder="Type the project feature here."
             onBlur={onBlur} // Notify React Hook Form when the editor is blurred
-            {...rest} // Spread the rest of the props you might need
           />
         )
       }}

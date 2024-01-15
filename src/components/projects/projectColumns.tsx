@@ -11,12 +11,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdownMenu"
 
-import { SelectProjectWithCategory } from "@/db/backupSchema"
 import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import DeleteDialog from "@/components/ui/deleteDialog"
 import { deleteProjectAction } from "../../actions/proejctsAction"
+import { SelectProjectWithCategory } from "@/db/schema/projects"
 
 export const projectColumns: ColumnDef<SelectProjectWithCategory>[] = [
   {

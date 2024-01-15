@@ -27,9 +27,10 @@ export const projects = pgTable("projects", {
   demoWebsite: varchar("demo_website", { length: 512 }),
   tags: text("tags").array(),
   content: text("content").notNull(),
-  featured: boolean("featured").default(false),
-  createdAt: timestamp("created_at", { mode: "string" }).defaultNow(),
-  order: integer("order").default(0),
+  featured: boolean("featured").default(false).notNull(),
+  published: boolean("published").default(false).notNull(),
+  createdAt: timestamp("created_at", { mode: "string" }).defaultNow().notNull(),
+  order: integer("order").default(0).notNull(),
 })
 
 export const projectsRelations = relations(projects, ({ many }) => ({
@@ -45,3 +46,13 @@ export const insertProjectSchema = createInsertSchema(projects, {
 export const selectProjectSchema = createSelectSchema(projects, {
   tags: z.array(z.string()),
 })
+
+export type SelectProjectWithCategory = SelectProject & {
+  projectsToCategories: Array<{
+    category: {
+      label: string
+      id: string
+      slug: string
+    }
+  }>
+}

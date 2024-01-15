@@ -1,6 +1,6 @@
-import { SelectProject } from "@/db/backupSchema"
 import React, { Suspense } from "react"
 import ProjectCard from "./ProjectCard"
+import { SelectProject } from "@/db/schema/projects"
 
 type Props = { projects: SelectProject[] }
 

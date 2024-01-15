@@ -13,15 +13,13 @@ import {
   UncontrolledFormMessage,
 } from "@/components/ui/form"
 
+import { Icons } from "@/components/Icons"
+import Link from "next/link"
 import {
   InsertCategory,
   SelectCategory,
   insertCategoriesSchema,
-  selectCategoriesSchema,
-} from "@/db/backupSchema"
-
-import { Icons } from "@/components/Icons"
-import Link from "next/link"
+} from "@/db/schema/categories"
 
 type CategoryFormProps = {
   category?: SelectCategory

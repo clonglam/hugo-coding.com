@@ -9,11 +9,12 @@ import { useForm } from "react-hook-form"
 import {
   Form,
   FormControl,
+  FormField,
   FormItem,
   FormLabel,
   UncontrolledFormMessage,
 } from "@/components/ui/form"
-import { SelectCategory, SelectProjectWithCategory } from "@/db/backupSchema"
+
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 
 import EditorField from "@/components/form/EditorField"
@@ -21,9 +22,11 @@ import { Icons } from "@/components/Icons"
 import SelectCategoriesField from "@/components/form/SelectCategoriesField"
 import TagsField from "@/components/ui/tagsField"
 
-import BooleanCheckboxField from "@/components/form/BooleanCheckboxField"
 import { addProjectAction, editProjectAction } from "@/actions/proejctsAction"
 import FeaturedImageField from "../media/FeaturedImageField"
+import { Checkbox } from "@radix-ui/react-checkbox"
+import { SelectProjectWithCategory } from "@/db/schema/projects"
+import { SelectCategory } from "@/db/schema/categories"
 
 type ProjectFormProps = {
   project?: SelectProjectWithCategory
@@ -133,17 +136,23 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
               <UncontrolledFormMessage message={errors.description?.message} />
             </FormItem>
 
-            <FormItem>
-              <FormLabel className="text-sm">Featured*</FormLabel>
-              <FormControl>
-                <BooleanCheckboxField
-                  defaultValue={project?.featured ? project.featured : false}
-                  label="Featured"
-                  {...form.register("featured")}
-                />
-              </FormControl>
-              <UncontrolledFormMessage message={errors.year?.message} />
-            </FormItem>
+            <FormField
+              control={form.control}
+              name="featured"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel>Check for featuring project</FormLabel>
+                  </div>
+                </FormItem>
+              )}
+            />
 
             <FormItem>
               <FormLabel className="text-sm">Tags</FormLabel>

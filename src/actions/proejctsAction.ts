@@ -2,18 +2,17 @@
 
 import { db } from "@/db"
 import { eq, sql, and, inArray } from "drizzle-orm"
+
+import { revalidateTag } from "next/cache"
+import { redirect } from "next/navigation"
 import {
   InsertProject,
   SelectProject,
-  categories,
-  categoriesRelations,
+  SelectProjectWithCategory,
   insertProjectSchema,
   projects,
-  projectsToCategories,
-  selectProjectSchema,
-} from "@/db/backupSchema"
-import { revalidateTag } from "next/cache"
-import { redirect } from "next/navigation"
+} from "@/db/schema/projects"
+import { categories } from "@/db/schema/categories"
 
 export async function addProjectAction(
   input: InsertProject,
@@ -105,14 +104,17 @@ export async function getProductsByCategoryAction({
   categorySlug: string | null
   year?: number
 }) {
-  if (categorySlug) {
-    const projectsInCategory = await db.query.categories.findFirst({
-      where: eq(categories.slug, categorySlug),
-      with: { projectsToCategories: { with: { project: true } } },
-    })
-    return projectsInCategory?.projectsToCategories.map((project) => ({
-      ...project.project,
-    }))
-  }
+  // TODO: Need to updated the problem
+  // if (categorySlug) {
+  //   const projectsInCategory: SelectProjectWithCategory[] =
+  //     await db.query.categories.findFirst({
+  //       where: eq(categories.slug, categorySlug),
+  //       with: { projectsToCategories: { with: { project: true } } },
+  //     })
+
+  //   return projectsInCategory?.projectsToCategories.map((project) => ({
+  //     ...project.project,
+  //   }))
+  // }
   return db.query.projects.findMany()
 }

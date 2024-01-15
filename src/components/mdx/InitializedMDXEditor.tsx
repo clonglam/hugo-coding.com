@@ -1,5 +1,4 @@
 "use client"
-// InitializedMDXEditor.tsx
 import type { ForwardedRef } from "react"
 import {
   headingsPlugin,
@@ -12,13 +11,44 @@ import {
   type MDXEditorProps,
   imagePlugin,
   diffSourcePlugin,
+  BoldItalicUnderlineToggles,
+  UndoRedo,
+  BlockTypeSelect,
+  DiffSourceToggleWrapper,
+  InsertImage,
+  toolbarPlugin,
+  codeBlockPlugin,
+  sandpackPlugin,
+  codeMirrorPlugin,
+  SandpackConfig,
+  ConditionalContents,
+  ChangeCodeMirrorLanguage,
+  ShowSandpackInfo,
+  InsertCodeBlock,
+  InsertSandpack,
 } from "@mdxeditor/editor"
 import { SelectMedia } from "@/db/backupSchema"
+import "@mdxeditor/editor/style.css"
 
 interface EditorProps extends MDXEditorProps {
   editorRef?: ForwardedRef<MDXEditorMethods> | null
 }
 
+const simpleSandpackConfig: SandpackConfig = {
+  defaultPreset: "react",
+  presets: [
+    {
+      label: "React",
+      name: "react",
+      meta: "live react",
+      sandpackTemplate: "react",
+      sandpackTheme: "light",
+      snippetFileName: "/App.js",
+      snippetLanguage: "jsx",
+      initialSnippetContent: "defaultSnippetContent",
+    },
+  ],
+}
 // Only import this to the next file
 export default function InitializedMDXEditor({
   editorRef,
@@ -44,31 +74,57 @@ export default function InitializedMDXEditor({
 
   return (
     <MDXEditor
+      className="mdx-container"
       plugins={[
-        // Example Plugin Usage
         headingsPlugin(),
         listsPlugin(),
         quotePlugin(),
         thematicBreakPlugin(),
         imagePlugin({ imageUploadHandler }),
         markdownShortcutPlugin(),
+        codeBlockPlugin({ defaultCodeBlockLanguage: "js" }),
+        sandpackPlugin({ sandpackConfig: simpleSandpackConfig }),
+        codeMirrorPlugin({
+          codeBlockLanguages: { js: "JavaScript", css: "CSS" },
+        }),
         diffSourcePlugin({
           diffMarkdown: "An older version",
           viewMode: "rich-text",
         }),
-        // toolbarPlugin({
-        //   toolbarContents: () => (
-        //     <>
-        //       <BoldItalicUnderlineToggles />
-        //       <UndoRedo />
-        //       <BlockTypeSelect />
-        //       <InsertImage />
-        //       <DiffSourceToggleWrapper>
-        //         <UndoRedo />
-        //       </DiffSourceToggleWrapper>
-        //     </>
-        //   ),
-        // }),
+        toolbarPlugin({
+          toolbarContents: () => (
+            <>
+              <BoldItalicUnderlineToggles />
+              <UndoRedo />
+              <BlockTypeSelect />
+              <InsertImage />
+              <ConditionalContents
+                options={[
+                  {
+                    when: (editor) => editor?.editorType === "codeblock",
+                    contents: () => <ChangeCodeMirrorLanguage />,
+                  },
+                  // {
+                  //   when: (editor) => editor?.editorType === "sandpack",
+                  //   contents: () => <ShowSandpackInfo />,
+                  // },
+                  {
+                    fallback: () => (
+                      <>
+                        <InsertCodeBlock />
+                        {/* <InsertSandpack /> */}
+                      </>
+                    ),
+                  },
+                ]}
+              />
+
+              <DiffSourceToggleWrapper>
+                <UndoRedo />
+              </DiffSourceToggleWrapper>
+            </>
+          ),
+        }),
       ]}
       {...props}
       ref={editorRef}

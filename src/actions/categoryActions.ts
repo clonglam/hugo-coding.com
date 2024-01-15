@@ -1,11 +1,11 @@
 "use server"
+
+import { db } from "@/db"
 import {
   InsertCategory,
   categories,
   insertCategoriesSchema,
-} from "@/db/backupSchema"
-
-import { db } from "@/db"
+} from "@/db/schema/categories"
 import { eq } from "drizzle-orm"
 
 import { revalidateTag } from "next/cache"

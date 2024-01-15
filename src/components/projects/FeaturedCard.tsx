@@ -1,6 +1,7 @@
 import { Icons } from "@/components/Icons"
 import { db } from "@/db"
-import { SelectProjectWithCategory, medias } from "@/db/backupSchema"
+import { medias } from "@/db/schema/medias"
+import { SelectProjectWithCategory } from "@/db/schema/projects"
 import { eq } from "drizzle-orm"
 import Image from "next/image"
 import Link from "next/link"

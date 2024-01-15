@@ -3,9 +3,10 @@ import { db } from "@/db"
 import SectionHeader from "@/components/SectionHeader"
 import CategorySelctor from "@/components/projects/CategorySelctor"
 import { getProductsByCategoryAction } from "@/actions/proejctsAction"
-import { SelectProject } from "@/db/backupSchema"
+
 import ProjectGrid from "@/components/projects/ProjectGrid"
 import { Suspense } from "react"
+import { SelectProject } from "@/db/schema/projects"
 
 type Props = {
   searchParams: {
@@ -14,7 +15,7 @@ type Props = {
 }
 
 async function ProjectsPage({ searchParams }: Props) {
-  const projects = await db.query.projects.findMany()
+  // const projects = await db.query.projects.findMany()
   const categoriesSelection = await db.query.categories.findMany()
 
   const { page, per_page, sort, category, store_page } = searchParams
