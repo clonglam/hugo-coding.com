@@ -26,9 +26,13 @@ import {
   ShowSandpackInfo,
   InsertCodeBlock,
   InsertSandpack,
+  linkPlugin,
+  linkDialogPlugin,
 } from "@mdxeditor/editor"
 
 import "@mdxeditor/editor/style.css"
+import "@/styles/himo/components/mdx.scss"
+
 import { SelectMedia } from "@/db/schema/medias"
 
 interface EditorProps extends MDXEditorProps {
@@ -62,7 +66,7 @@ export default function InitializedMDXEditor({
     formData.append("name", "Testing image")
     // send the file to your server and return
     // the URL of the uploaded image in the response
-    const response = await fetch("/medias", {
+    const response = await fetch("/api/medias", {
       method: "POST",
       body: formData,
     })
@@ -76,7 +80,15 @@ export default function InitializedMDXEditor({
   return (
     <MDXEditor
       className="mdx-container"
+      contentEditableClassName="mdx-container"
       plugins={[
+        linkPlugin(),
+        linkDialogPlugin({
+          linkAutocompleteSuggestions: [
+            "https://virtuoso.dev",
+            "https://mdxeditor.dev",
+          ],
+        }),
         headingsPlugin(),
         listsPlugin(),
         quotePlugin(),

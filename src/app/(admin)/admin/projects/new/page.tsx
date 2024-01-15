@@ -6,6 +6,7 @@ import { buttonVariants } from "@/components/ui/button"
 import { db } from "@/db"
 import { notFound } from "next/navigation"
 import ProjectForm from "@/components/projects/ProjectForm"
+import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
 
 type Props = {}
 
@@ -14,8 +15,19 @@ async function NewProjectPage({}: Props) {
   if (!categories) return notFound()
 
   return (
-    <div className="">
-      <SectionHeader
+    <DashboardWrapper
+      header="Add Project"
+      description="Input the field below, after that press Add Project button to save the project."
+      sectionAction={
+        <Link
+          href="/admin/projects"
+          className={buttonVariants({ variant: "dark" })}
+        >
+          Back
+        </Link>
+      }
+    >
+      {/* <SectionHeader
         header="Add Project"
         description="Input the field below, after that press Add Project button to save the project."
       >
@@ -25,11 +37,11 @@ async function NewProjectPage({}: Props) {
         >
           Back
         </Link>
-      </SectionHeader>
+      </SectionHeader> */}
       <div className="">
         <ProjectForm categories={categories} />
       </div>
-    </div>
+    </DashboardWrapper>
   )
 }
 

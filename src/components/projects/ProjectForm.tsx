@@ -18,7 +18,7 @@ import {
 
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 
-import EditorField from "@/components/form/EditorField"
+import EditorField from "@/components/mdx/EditorField"
 import { Icons } from "@/components/Icons"
 import SelectCategoriesField from "@/components/form/SelectCategoriesField"
 import TagsField from "@/components/ui/tagsField"
@@ -36,7 +36,6 @@ type ProjectFormProps = {
 
 function ProjectForm({ project, categories }: ProjectFormProps) {
   const [isPending, startTransition] = useTransition()
-  // console.log("project", project)
 
   const form = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
@@ -140,6 +139,7 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
 
             <FormField
               control={form.control}
+              defaultValue={project?.featured || false}
               name="featured"
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
@@ -156,29 +156,33 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 </FormItem>
               )}
             />
+            {/* <FormField
+              control={form.control}
+              name="published"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow">
+                  <FormControl>
+                    <Checkbox
+                      defaultChecked={project?.published || false}
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormLabel>Published</FormLabel>
+                  <FormDescription>published Project</FormDescription>
+                </FormItem>
+              )}
+            /> */}
 
-            {/* 
             <FormItem>
-              <FormLabel className="text-sm">Featured*</FormLabel>
-              <FormControl>
-                <BooleanCheckboxField
-                  defaultValue={project?.featured ? project.featured : false}
-                  label="Featured"
-                  {...form.register("featured")}
-                />
-              </FormControl>
-              <UncontrolledFormMessage message={errors.featured?.message} />
-            </FormItem> */}
-
-            {/* <FormItem>
               <FormLabel className="text-sm">Tags</FormLabel>
               <FormControl>
                 <TagsField name={"tags"} defaultValue={project?.tags || []} />
               </FormControl>
               <UncontrolledFormMessage message={errors.title?.message} />
-            </FormItem> */}
+            </FormItem>
 
-            {/* <FormItem>
+            <FormItem>
               <FormLabel className="text-sm">Featured Image</FormLabel>
               <FormControl>
                 <FeaturedImageField
@@ -187,9 +191,9 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 />
               </FormControl>
               <UncontrolledFormMessage message={errors.title?.message} />
-            </FormItem> */}
+            </FormItem>
 
-            {/* <FormItem>
+            <FormItem>
               <FormLabel className="text-sm">Year*</FormLabel>
               <FormControl>
                 <Input
@@ -237,7 +241,7 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
                 />
               </FormControl>
               <UncontrolledFormMessage message={errors.demoWebsite?.message} />
-            </FormItem>  */}
+            </FormItem>
           </div>
         </div>
       </form>

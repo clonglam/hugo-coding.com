@@ -1,11 +1,12 @@
 import { buttonVariants } from "@/components/ui/button"
-import { getFeaturedProjects } from "@/db/queries"
+
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { Suspense } from "react"
 import FeaturedProjectSectionWrapper from "../main/FeaturedProjectSectionWrapper"
 import FeaturedCard from "./FeaturedCard"
 import FeaturedCardLoader from "./FeaturedCardLoader"
+import { getFeaturedProjects } from "@/actions/proejctsAction"
 
 async function FeaturedProjectsSection() {
   const { data: featuredProjects } = await getFeaturedProjects({ limit: 2 })

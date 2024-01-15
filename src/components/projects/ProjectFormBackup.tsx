@@ -17,7 +17,7 @@ import {
 
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 
-import EditorField from "@/components/form/EditorField"
+import EditorField from "@/components/mdx/EditorField"
 import { Icons } from "@/components/Icons"
 import SelectCategoriesField from "@/components/form/SelectCategoriesField"
 import TagsField from "@/components/ui/tagsField"

@@ -1,36 +1,43 @@
-import { db } from "@/db"
 import React from "react"
+import Link from "next/link"
+import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
 import { projectColumns } from "@/components/projects/projectColumns"
 import { PaginationTable } from "@/components/PaginationTable"
-import SectionHeader from "@/components/SectionHeader"
-import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
+import { listProjects } from "@/actions/proejctsAction"
 
-type Props = {}
+type AdminProjectsPageProps = {
+  searchParams: {
+    [key: string]: string | string[] | undefined
+  }
+}
 
-async function AdminProjectsPage({}: Props) {
-  const projects = await db.query.projects.findMany({
-    with: {
-      projectsToCategories: { with: { category: true } },
-    },
+async function AdminProjectsPage({ searchParams }: AdminProjectsPageProps) {
+  const { page, per_page, sort } = searchParams
+
+  const limit = typeof per_page === "string" ? parseInt(per_page) : 8
+  const offset = typeof page === "string" ? (parseInt(page) - 1) * limit : 0
+
+  const projects = await listProjects({
+    limit,
+    offset,
   })
 
   return (
-    <div>
-      <SectionHeader
-        header="All Projects"
-        description="You can add/edit the project from the dashboard"
-      >
+    <DashboardWrapper
+      header="All Projects"
+      description="You can add/edit the project from the dashboard"
+      sectionAction={
         <Link
           href="/admin/projects/new"
           className={buttonVariants({ variant: "dark" })}
         >
           New Project
         </Link>
-      </SectionHeader>
-
+      }
+    >
       <PaginationTable columns={projectColumns} data={projects} />
-    </div>
+    </DashboardWrapper>
   )
 }
 

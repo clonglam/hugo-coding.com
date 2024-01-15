@@ -11,6 +11,7 @@ export const projectSchema = z.object({
   tags: z.array(z.string()),
   featuredImage: z.string(),
   featured: z.boolean(),
+  published: z.boolean().optional(),
   categories: z.array(z.string()),
 })
 

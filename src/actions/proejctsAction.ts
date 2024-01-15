@@ -14,6 +14,72 @@ import {
 } from "@/db/schema/projects"
 import { categories } from "@/db/schema/categories"
 
+type GetFeaturedProjectsType = { limit?: number }
+
+export const getFeaturedProjects = async ({
+  limit = 2,
+}: GetFeaturedProjectsType) => {
+  try {
+    const data = await db.query.projects.findMany({
+      where: and(eq(projects.featured, true), eq(projects.published, true)),
+      with: {
+        projectsToCategories: {
+          columns: { projectId: false, categoryId: false },
+          with: { category: true },
+        },
+      },
+      limit,
+    })
+    return data
+      ? { data, error: null }
+      : { data: null, error: `Error, unabled to fetch featured projects.` }
+  } catch (error) {
+    return { data: null, error: `Error, unabled to fetch featured projects.` }
+  }
+}
+
+type ListPublishedProjectsType = {
+  categorySlug?: string
+  limit?: number
+  offset?: number
+}
+
+export const listPublishedProjects = async ({
+  categorySlug,
+  limit,
+  offset,
+}: ListPublishedProjectsType) => {
+  if (categorySlug) {
+    const projectsInCategory = await db.query.categories.findFirst({
+      where: eq(categories.slug, categorySlug),
+      with: { projectsToCategories: { with: { project: true } } },
+    })
+
+    return projectsInCategory?.projectsToCategories.map((project) => ({
+      ...project.project,
+    }))
+  }
+
+  return await db.query.projects.findMany({
+    with: { projectsToCategories: { with: { category: true } } },
+    where: and(eq(projects.published, true)),
+    limit,
+    offset,
+  })
+}
+
+type ListProjectsType = {
+  limit?: number
+  offset?: number
+}
+
+export const listProjects = async ({ limit, offset }: ListProjectsType) =>
+  await db.query.projects.findMany({
+    with: { projectsToCategories: { with: { category: true } } },
+    limit,
+    offset,
+  })
+
 export async function addProjectAction(
   input: InsertProject,
   categories: string[]
@@ -76,8 +142,6 @@ export async function deleteProjectAction(id: string) {
   revalidateTag("projects") // Update cached posts
 }
 
-// Function to update the project's categories
-
 async function updateProjectCategories(
   projectId: string,
   categoryIds: string[]
@@ -94,25 +158,4 @@ async function updateProjectCategories(
       )
     }
   })
-}
-
-export async function getProductsByCategoryAction({
-  categorySlug,
-}: {
-  limit: number
-  offset: number
-  categorySlug: string | null
-  year?: number
-}) {
-  if (categorySlug) {
-    const projectsInCategory = await db.query.categories.findFirst({
-      where: eq(categories.slug, categorySlug),
-      with: { projectsToCategories: { with: { project: true } } },
-    })
-
-    return projectsInCategory?.projectsToCategories.map((project) => ({
-      ...project.project,
-    }))
-  }
-  return db.query.projects.findMany()
 }

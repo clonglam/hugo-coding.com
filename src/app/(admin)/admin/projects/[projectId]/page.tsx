@@ -1,47 +1,48 @@
 import { db } from "@/db"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
-import React from "react"
 
-import SectionHeader from "@/components/SectionHeader"
-import { Link } from "lucide-react"
-import { buttonVariants } from "@/components/ui/button"
+import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
 import ProjectForm from "@/components/projects/ProjectForm"
+import { buttonVariants } from "@/components/ui/button"
 import { projects } from "@/db/schema/projects"
+import { Link } from "lucide-react"
 
-type Props = {
+type EditProjectPageProps = {
   params: {
     projectId: string
   }
 }
 
-async function EditProjectPage({ params: { projectId } }: Props) {
+async function EditProjectPage({
+  params: { projectId },
+}: EditProjectPageProps) {
   const project = await db.query.projects.findFirst({
     where: eq(projects.id, projectId),
     with: {
       projectsToCategories: { with: { category: true } },
     },
   })
+
   const categories = await db.query.categories.findMany()
 
   if (!project || !categories) return notFound()
 
   return (
-    <div>
-      <SectionHeader
-        header="Edit Project"
-        description="You can add/edit the project from the dashboard"
-      >
+    <DashboardWrapper
+      header="Edit Project"
+      description="You can add/edit the project from the dashboard"
+      sectionAction={
         <Link
           href="/admin/projects"
           className={buttonVariants({ variant: "dark" })}
         >
           Back
         </Link>
-      </SectionHeader>
-
+      }
+    >
       <ProjectForm project={project} categories={categories} />
-    </div>
+    </DashboardWrapper>
   )
 }
 

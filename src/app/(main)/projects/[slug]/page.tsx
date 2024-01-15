@@ -2,7 +2,7 @@ import Image from "next/image"
 
 import { getMedia } from "@/actions/mediaAction"
 import { getProjectBySlugAction } from "@/actions/proejctsAction"
-import { Mdx } from "@/components/form/mdx-components"
+import { Mdx } from "@/components/mdx/mdx-components"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Link from "next/link"

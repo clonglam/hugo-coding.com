@@ -1,13 +1,8 @@
 "use client"
 import { FC, useRef } from "react"
 import { Controller, useFormContext } from "react-hook-form"
-
 import { MDXEditorMethods } from "@mdxeditor/editor"
-import dynamic from "next/dynamic"
-import { ForwardRefEditor } from "../mdx/ForwardRefEditor"
-// const EditorComp = dynamic(() => import("@/components/form/EditorComponent"), {
-//   ssr: false,
-// })
+import { ForwardRefEditor } from "./ForwardRefEditor"
 
 export const EditorField: FC<{
   name: string
