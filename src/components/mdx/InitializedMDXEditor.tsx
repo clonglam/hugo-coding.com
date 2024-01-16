@@ -28,6 +28,8 @@ import {
   InsertSandpack,
   linkPlugin,
   linkDialogPlugin,
+  tablePlugin,
+  InsertTable,
 } from "@mdxeditor/editor"
 
 import "@mdxeditor/editor/style.css"
@@ -60,12 +62,10 @@ export default function InitializedMDXEditor({
   ...props
 }: EditorProps) {
   async function imageUploadHandler(image: File) {
-    console.log("image", image)
     const formData = new FormData()
     formData.append("image", image)
     formData.append("name", "Testing image")
-    // send the file to your server and return
-    // the URL of the uploaded image in the response
+
     const response = await fetch("/api/medias", {
       method: "POST",
       body: formData,
@@ -90,6 +90,7 @@ export default function InitializedMDXEditor({
           ],
         }),
         headingsPlugin(),
+        tablePlugin(),
         listsPlugin(),
         quotePlugin(),
         thematicBreakPlugin(),
@@ -98,7 +99,12 @@ export default function InitializedMDXEditor({
         codeBlockPlugin({ defaultCodeBlockLanguage: "js" }),
         sandpackPlugin({ sandpackConfig: simpleSandpackConfig }),
         codeMirrorPlugin({
-          codeBlockLanguages: { js: "JavaScript", css: "CSS" },
+          codeBlockLanguages: {
+            js: "JavaScript",
+            css: "CSS",
+            tsx: "tsx",
+            jsx: "jsx",
+          },
         }),
         diffSourcePlugin({
           diffMarkdown: "An older version",
@@ -111,6 +117,7 @@ export default function InitializedMDXEditor({
               <UndoRedo />
               <BlockTypeSelect />
               <InsertImage />
+              <InsertTable />
               <ConditionalContents
                 options={[
                   {

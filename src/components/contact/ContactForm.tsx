@@ -40,17 +40,7 @@ function ContactForm({ category }: CategoryFormProps) {
   } = form
 
   const onSubmit = handleSubmit((data) => {
-    console.log("form submited", data)
-
-    // startTransition(async () => {
-    //   try {
-    //     category
-    //       ? await editCategoryAction(category.id, data)
-    //       : await addCategoryAction(data)
-    //   } catch (err) {
-    //     console.log("unexpected Error Occured")
-    //   }
-    // })
+    // TODO: Create a api for send Email
   })
 
   return (

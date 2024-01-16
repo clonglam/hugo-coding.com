@@ -5,6 +5,7 @@ import type { Metadata } from "next"
 
 import Gtag from "@/lib/gtag"
 import { Inter, Roboto_Mono } from "next/font/google"
+import { Toaster } from "@/components/ui/toaster"
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -30,7 +31,10 @@ export default function RootLayout({
     <html lang="en">
       <Gtag />
       <SpeedInsights />
-      <body>{children}</body>
+      <body>
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }

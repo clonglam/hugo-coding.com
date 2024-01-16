@@ -37,6 +37,8 @@
     --dark: #000;
     --dark-foreground: #fff;
     --dark-background: #000;
+
+    --link: #0066cc;
   }
 
   .dark {
@@ -71,6 +73,8 @@
     --dark: #000;
     --dark-foreground: #fff;
     --dark-background: #000;
+
+    --link: #2997ff;
   }
 }
 
@@ -110,9 +114,6 @@ body {
   }
   h3 {
     @apply text-lg;
-  }
-  li {
-    list-style-type: none;
   }
 }
 

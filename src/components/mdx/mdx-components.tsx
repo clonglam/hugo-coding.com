@@ -1,5 +1,5 @@
 import * as React from "react"
-import Image from "next/image"
+import Image, { ImageProps } from "next/image"
 import type { MDXComponents } from "mdx/types"
 import { Suspense } from "react"
 import { MDXRemote } from "next-mdx-remote/rsc"
@@ -20,21 +20,20 @@ const components: MDXComponents = {
   ol: ({ className, ...props }) => <ol className={cn(className)} {...props} />,
   li: ({ className, ...props }) => <li className={cn(className)} {...props} />,
   blockquote: ({ className, ...props }) => (
-    <blockquote
-      className={cn(
-        "mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
-        className
-      )}
-      {...props}
-    />
+    <blockquote className={cn(className)} {...props} />
   ),
   img: ({
     className,
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img className={cn("rounded-md border", className)} alt={alt} {...props} />
+    <Image
+      {...(props as ImageProps)}
+      width={400}
+      height={300}
+      className="object-contain"
+      alt={alt || "Image"}
+    />
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
@@ -69,7 +68,7 @@ const components: MDXComponents = {
   pre: ({ className, ...props }) => (
     <pre
       className={cn(
-        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-black py-4",
+        "mb-4 mt-6 overflow-x-auto rounded-lg border bg-white py-4",
         className
       )}
       {...props}

@@ -10,48 +10,54 @@
     line-height: 1.2;
     font-weight: 600;
     letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: #1f1f21;
   }
   h2 {
-    font-size: 2.25rem /* 36px */;
+    font-size: 2rem /* 36px */;
     line-height: 1.2;
     letter-spacing: -2%;
     font-weight: 600;
-    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1f1f21;
   }
   h3 {
     font-size: 1.5rem /* 24px */;
     line-height: 2rem /* 32px */;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
     letter-spacing: -0.025em;
+    color: #1f1f21;
   }
   h4 {
     font-size: 1.25rem /* 20px */;
     line-height: 1.75rem /* 28px */;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
+    color: #1f1f21;
   }
   h5 {
     font-size: 1.125rem /* 18px */;
     line-height: 1.75rem /* 28px */;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
   }
   h6 {
     font-size: 1rem /* 18px */;
     line-height: 1.25rem /* 28px */;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
   }
   a {
     color: #0066cc;
-    text-decoration: underline;
   }
   p {
     line-height: 1.75rem /* 28px */;
     color: #636368;
+    margin-bottom: 1rem;
+
     &:not(:first-child) {
-      margin-top: 2rem;
+      margin-top: 0.5rem;
     }
   }
   span {
@@ -76,5 +82,20 @@
     width: 400px;
     height: 300px;
     aspect-ratio: 3/4;
+  }
+
+  blockquote {
+    margin-top: 1.5rem;
+    border-left-width: 2px;
+    padding-left: 1.5rem;
+    font-style: italic;
+    .\[\&\>\*\]\:text-muted-foreground > * {
+      color: hsl(var(--muted-foreground));
+    }
+  }
+  code {
+    background: white;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
   }
 }

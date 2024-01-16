@@ -28,6 +28,7 @@ import FeaturedImageField from "../media/FeaturedImageField"
 import { Checkbox } from "../ui/checkbox"
 import { SelectProjectWithCategory } from "@/db/schema/projects"
 import { SelectCategory } from "@/db/schema/categories"
+import { useToast } from "../ui/use-toast"
 
 type ProjectFormProps = {
   project?: SelectProjectWithCategory
@@ -36,7 +37,7 @@ type ProjectFormProps = {
 
 function ProjectForm({ project, categories }: ProjectFormProps) {
   const [isPending, startTransition] = useTransition()
-
+  const { toast } = useToast()
   const form = useForm<ProjectFormData>({
     resolver: zodResolver(projectSchema),
   })
@@ -49,8 +50,6 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
   } = form
 
   const onSubmit = handleSubmit((data) => {
-    console.log("form submited", data)
-
     const { categories, ...projectInput } = data
 
     startTransition(async () => {
@@ -58,8 +57,16 @@ function ProjectForm({ project, categories }: ProjectFormProps) {
         project
           ? await editProjectAction(project.id, projectInput, categories)
           : await addProjectAction(projectInput, categories)
+
+        toast({
+          title: project
+            ? "Project Update Successfully."
+            : "Created New Project.",
+        })
       } catch (err) {
-        console.log("unexpected Error Occured")
+        toast({
+          title: "Unexpected Error Occured",
+        })
       }
     })
   })

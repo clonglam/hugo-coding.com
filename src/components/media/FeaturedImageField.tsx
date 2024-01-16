@@ -30,7 +30,7 @@ export const FeaturedImageField: FC<{
 
   const onDrop = useCallback(
     async (acceptedFiles: FileWithPath[]) => {
-      console.log("acceptedFiles", acceptedFiles)
+      // console.log("acceptedFiles", acceptedFiles)
 
       if (acceptedFiles.length > 0) {
         const id = nanoid()

@@ -106,6 +106,12 @@ export const projectColumns: ColumnDef<SelectProjectWithCategory>[] = [
             >
               Edit Project
             </Link>
+            <Link
+              href={`/admin/projects/preview/${project.slug}`}
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              Preview Project
+            </Link>
             <DeleteProjectDialog projectId={project.id} />
           </DropdownMenuContent>
         </DropdownMenu>

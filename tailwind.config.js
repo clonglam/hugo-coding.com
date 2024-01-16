@@ -44,6 +44,7 @@ const config = {
         ],
       },
       colors: {
+        link: "var(--link)",
         branding: "#000",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

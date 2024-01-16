@@ -40,10 +40,13 @@ async function ProjectsPage({ searchParams }: Props) {
   return (
     <div className="container min-h-[80vh]">
       <SectionHeader header="All Projects" description="" />
-      <CategorySelctor
-        categories={categoriesSelection}
-        selectedCategory={typeof category === "string" ? category : null}
-      />
+      <Suspense>
+        <CategorySelctor
+          categories={categoriesSelection}
+          selectedCategory={typeof category === "string" ? category : null}
+        />
+      </Suspense>
+
       <Suspense>
         <ProjectGrid projects={publishedProjects} />
       </Suspense>
