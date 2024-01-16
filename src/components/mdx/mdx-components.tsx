@@ -27,13 +27,14 @@ const components: MDXComponents = {
     alt,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <Image
-      {...(props as ImageProps)}
-      width={400}
-      height={300}
-      className="object-contain"
-      alt={alt || "Image"}
-    />
+    <div className="relative w-full h-[380px]">
+      <Image
+        {...(props as ImageProps)}
+        fill
+        className="object-contain"
+        alt={alt || "Image"}
+      />
+    </div>
   ),
   hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
