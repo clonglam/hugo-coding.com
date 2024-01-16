@@ -2,8 +2,8 @@
 
 import { FC, useCallback, useEffect, useState } from "react"
 import { FileWithPath, useDropzone } from "react-dropzone"
-import Modal from "../Modal"
-import { Icons } from "../Icons"
+import Modal from "../../global/Modal"
+import { Icons } from "../../global/Icons"
 import { useRouter } from "next/navigation"
 import { SelectMedia } from "@/db/schema/medias"
 

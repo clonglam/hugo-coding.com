@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import SectionHeader from "../SectionHeader"
+import SectionHeader from "../main/SectionHeader"
 
 type Props = {
   sectionAction: ReactNode

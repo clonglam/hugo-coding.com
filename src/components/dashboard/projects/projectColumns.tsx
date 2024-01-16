@@ -2,7 +2,6 @@
 
 import { ColumnDef } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
-
 import { Button, buttonVariants } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -15,7 +14,8 @@ import Link from "next/link"
 
 import { Badge } from "@/components/ui/badge"
 import DeleteDialog from "@/components/ui/deleteDialog"
-import { deleteProjectAction } from "../../actions/proejctsAction"
+
+import { deleteProjectAction } from "@/actions/proejctsAction"
 import { SelectProjectWithCategory } from "@/db/schema/projects"
 
 export const projectColumns: ColumnDef<SelectProjectWithCategory>[] = [

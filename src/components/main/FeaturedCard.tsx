@@ -1,4 +1,4 @@
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import { db } from "@/db"
 import { medias } from "@/db/schema/medias"
 import { SelectProjectWithCategory } from "@/db/schema/projects"

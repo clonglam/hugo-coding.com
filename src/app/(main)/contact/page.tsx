@@ -1,6 +1,6 @@
 import React from "react"
 
-import SectionHeader from "@/components/SectionHeader"
+import SectionHeader from "@/components/main/SectionHeader"
 import ContactInfo from "@/components/contact/ContactInfo"
 import ContactForm from "@/components/contact/ContactForm"
 

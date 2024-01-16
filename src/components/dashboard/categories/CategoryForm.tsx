@@ -12,7 +12,7 @@ import {
   UncontrolledFormMessage,
 } from "@/components/ui/form"
 
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import Link from "next/link"
 
 import { Input } from "@/components/ui/input"
@@ -20,7 +20,7 @@ import { Button, buttonVariants } from "@/components/ui/button"
 import {
   addCategoryAction,
   editCategoryAction,
-} from "../../actions/categoryActions"
+} from "../../../actions/categoryActions"
 import {
   InsertCategory,
   SelectCategory,

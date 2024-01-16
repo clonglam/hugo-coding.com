@@ -1,6 +1,6 @@
 import type { FileWithPath } from "react-dropzone"
 
-import { type Icons } from "@/components/Icons"
+import { type Icons } from "@/components/global/Icons"
 
 export type NavLinks = { label: string; href: string; external?: boolean }
 export interface NavItem {

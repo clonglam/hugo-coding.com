@@ -1,6 +1,6 @@
 import { getMedia } from "@/actions/mediaAction"
-import Modal from "@/components/Modal"
-import UpdateMediaForm from "@/components/media/UpdateMediaForm"
+import Modal from "@/components/global/Modal"
+import UpdateMediaForm from "@/components/dashboard/media/UpdateMediaForm"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 

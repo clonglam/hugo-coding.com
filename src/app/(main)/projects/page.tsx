@@ -2,10 +2,11 @@ import { Suspense } from "react"
 import { notFound } from "next/navigation"
 import { db } from "@/db"
 
-import SectionHeader from "@/components/SectionHeader"
-import CategorySelctor from "@/components/projects/CategorySelctor"
-import ProjectGrid from "@/components/projects/ProjectGrid"
+import SectionHeader from "@/components/main/SectionHeader"
+
 import { listPublishedProjects } from "@/actions/proejctsAction"
+import CategorySelctor from "@/components/dashboard/projects/CategorySelctor"
+import ProjectGrid from "@/components/dashboard/projects/ProjectGrid"
 
 type Props = {
   searchParams: {

@@ -13,7 +13,7 @@ import {
   UncontrolledFormMessage,
 } from "@/components/ui/form"
 
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import Link from "next/link"
 import {
   InsertCategory,

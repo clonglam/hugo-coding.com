@@ -1,5 +1,5 @@
 "use client"
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import { useNavbarContext } from "./NavbarContext"
 
 type Props = {}

@@ -1,10 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
-import { projectColumns } from "@/components/projects/projectColumns"
-import { PaginationTable } from "@/components/PaginationTable"
+
 import { buttonVariants } from "@/components/ui/button"
 import { listProjects } from "@/actions/proejctsAction"
+import { projectColumns } from "@/components/dashboard/projects/projectColumns"
+import { PaginationTable } from "@/components/global/PaginationTable"
 
 type AdminProjectsPageProps = {
   searchParams: {

@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import SectionHeader from "../SectionHeader"
+import SectionHeader from "../main/SectionHeader"
 
 it("should render Component Section Header", () => {
   render(

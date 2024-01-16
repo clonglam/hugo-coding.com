@@ -1,6 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import Carousel from "@/components/Carousel"
+import Carousel from "@/components/main/Carousel"
 
 type Props = {}
 

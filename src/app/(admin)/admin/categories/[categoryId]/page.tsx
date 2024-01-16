@@ -3,10 +3,10 @@ import { db } from "@/db"
 import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 
-import SectionHeader from "@/components/SectionHeader"
+import SectionHeader from "@/components/main/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
-import CateoryForm from "@/components/categories/CategoryForm"
+import CateoryForm from "@/components/dashboard/categories/CategoryForm"
 import { categories } from "@/db/schema/categories"
 
 type Props = {

@@ -2,8 +2,9 @@
 
 import { FC } from "react"
 import { Controller, useFormContext } from "react-hook-form"
-import { Checkbox } from "../ui/checkbox"
+
 import { SelectCategory } from "@/db/schema/categories"
+import { Checkbox } from "@/components/ui/checkbox"
 
 export const SelectCategoriesField: FC<{
   name: string

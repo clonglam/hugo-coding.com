@@ -1,4 +1,4 @@
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import Link from "next/link"
 import React from "react"
 

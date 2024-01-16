@@ -1,4 +1,4 @@
-import { Icon, Icons } from "@/components/Icons"
+import { Icon, Icons } from "@/components/global/Icons"
 import { LucideIcon, LucideProps } from "lucide-react"
 
 const landingConfig = {

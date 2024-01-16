@@ -1,12 +1,13 @@
 import React from "react"
 
-import SectionHeader from "@/components/SectionHeader"
+import SectionHeader from "@/components/main/SectionHeader"
 import Link from "next/link"
 import { buttonVariants } from "@/components/ui/button"
 import { db } from "@/db"
 import { notFound } from "next/navigation"
-import ProjectForm from "@/components/projects/ProjectForm"
+
 import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
+import ProjectForm from "@/components/dashboard/projects/ProjectForm"
 
 type Props = {}
 

@@ -1,6 +1,6 @@
 import "server-only"
 
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 import { db } from "@/db"
 
 import { eq } from "drizzle-orm"

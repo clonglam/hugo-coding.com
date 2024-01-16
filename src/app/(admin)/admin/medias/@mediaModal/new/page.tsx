@@ -1,6 +1,6 @@
 import React from "react"
 
-import UploadMediasModal from "@/components/media/UploadMediasModal"
+import UploadMediasModal from "@/components/dashboard/media/UploadMediasModal"
 
 type Props = {}
 

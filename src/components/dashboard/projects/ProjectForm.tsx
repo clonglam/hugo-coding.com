@@ -19,16 +19,18 @@ import {
 import { ProjectFormData, projectSchema } from "@/validations/projects"
 
 import EditorField from "@/components/mdx/EditorField"
-import { Icons } from "@/components/Icons"
-import SelectCategoriesField from "@/components/form/SelectCategoriesField"
+import { Icons } from "@/components/global/Icons"
+
 import TagsField from "@/components/ui/tagsField"
 
 import { addProjectAction, editProjectAction } from "@/actions/proejctsAction"
 import FeaturedImageField from "../media/FeaturedImageField"
-import { Checkbox } from "../ui/checkbox"
+
 import { SelectProjectWithCategory } from "@/db/schema/projects"
 import { SelectCategory } from "@/db/schema/categories"
-import { useToast } from "../ui/use-toast"
+import { useToast } from "@/components/ui/use-toast"
+import { Checkbox } from "@/components/ui/checkbox"
+import SelectCategoriesField from "./SelectCategoriesField"
 
 type ProjectFormProps = {
   project?: SelectProjectWithCategory

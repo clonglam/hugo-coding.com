@@ -19,7 +19,7 @@ import { ProjectFormData, projectSchema } from "@/validations/projects"
 
 // import { SelectMedia } from "../../db/backupSchema"
 
-import DeleteDialog from "../ui/deleteDialog"
+import DeleteDialog from "../../ui/deleteDialog"
 import { useRouter } from "next/navigation"
 import { deleteMedia } from "@/actions/mediaAction"
 

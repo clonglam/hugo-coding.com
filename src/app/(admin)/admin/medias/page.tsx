@@ -1,9 +1,9 @@
 import { getMedias } from "@/actions/mediaAction"
 import Image from "next/image"
 import Link from "next/link"
-import SectionHeader from "../../../../components/SectionHeader"
+import SectionHeader from "../../../../components/main/SectionHeader"
 import { buttonVariants } from "../../../../components/ui/button"
-import { Icons } from "@/components/Icons"
+import { Icons } from "@/components/global/Icons"
 
 type Props = {}
 

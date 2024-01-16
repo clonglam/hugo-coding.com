@@ -3,10 +3,11 @@ import { eq } from "drizzle-orm"
 import { notFound } from "next/navigation"
 
 import DashboardWrapper from "@/components/dashboard/DashboardWrapper"
-import ProjectForm from "@/components/projects/ProjectForm"
+
 import { buttonVariants } from "@/components/ui/button"
 import { projects } from "@/db/schema/projects"
 import { Link } from "lucide-react"
+import ProjectForm from "@/components/dashboard/projects/ProjectForm"
 
 type EditProjectPageProps = {
   params: {
