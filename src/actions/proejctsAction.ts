@@ -1,7 +1,7 @@
 "use server"
 
 import { db } from "@/db"
-import { eq, sql, and, inArray } from "drizzle-orm"
+import { eq, sql, and, inArray, desc } from "drizzle-orm"
 
 import { revalidateTag } from "next/cache"
 import { redirect } from "next/navigation"
@@ -65,6 +65,7 @@ export const listPublishedProjects = async ({
     where: and(eq(projects.published, true)),
     limit,
     offset,
+    orderBy: [desc(projects.createdAt)],
   })
 }
 
