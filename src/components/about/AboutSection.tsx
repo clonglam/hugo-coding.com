@@ -31,7 +31,7 @@ function AboutSection({}: Props) {
             className="object-cover aspect-square rounded-full"
             width={180}
             height={180}
-            src="/assets/hugo-image.webp"
+            src="/assets/hugo-image.JPG"
             alt=""
           />
         </div>

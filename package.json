@@ -42,7 +42,7 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.10",
     "dotenv": "^16.3.1",
-    "drizzle-orm": "^0.28.6",
+    "drizzle-orm": "^0.29.4",
     "drizzle-zod": "^0.5.1",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",

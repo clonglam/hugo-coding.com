@@ -50,14 +50,36 @@ export const listPublishedProjects = async ({
   offset,
 }: ListPublishedProjectsType) => {
   if (categorySlug) {
+    const selectedCategory = await db.query.categories.findFirst({
+      where: eq(categories.slug, categorySlug),
+    })
     const projectsInCategory = await db.query.categories.findFirst({
       where: eq(categories.slug, categorySlug),
-      with: { projectsToCategories: { with: { project: true } } },
+      with: {
+        projectsToCategories: {
+          with: {
+            project: true,
+          },
+        },
+      },
     })
-
+    // const projectsInCategory = await db.select({
+    //   categories: {
+    //     where: (eq:(categories.slug, categorySlug ))
+    //     with:
+    //     },
+    //   },
+    // })
     return projectsInCategory?.projectsToCategories.map((project) => ({
       ...project.project,
     }))
+    // return await db.query.projects.findMany({
+    //   with: { projectsToCategories: { with: { category: true } } },
+    //   where: and(eq(projects.published, true), eq(projects.c)),
+    //   limit,
+    //   offset,
+    //   orderBy: [desc(projects.year), desc(projects.createdAt)],
+    // })
   }
 
   return await db.query.projects.findMany({
@@ -65,7 +87,7 @@ export const listPublishedProjects = async ({
     where: and(eq(projects.published, true)),
     limit,
     offset,
-    orderBy: [desc(projects.createdAt)],
+    orderBy: [desc(projects.year), desc(projects.createdAt)],
   })
 }
 
